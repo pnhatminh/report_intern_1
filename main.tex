@@ -1,0 +1,204 @@
+\documentclass[12pt,a4paper]{report}
+
+% ---------- Page layout and typography ----------
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---------- Figures, tables, links, and references ----------
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage[nameinlink,capitalise,noabbrev]{cleveref}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!50!black,
+  citecolor=green!40!black,
+  urlcolor=blue!60!black,
+  pdftitle={Industrial Internship Summary},
+  pdfauthor={Your Name}
+}
+
+% ---------- Convenient commands ----------
+\newcommand{\placeholder}[1]{\textcolor{blue!70!black}{[#1]}}
+\newcommand{\reporttitle}{Industrial Internship Summary}
+
+\hypersetup{pageanchor=false}
+\begin{document}
+
+% ---------- Cover page ----------
+\begin{titlepage}
+  \centering
+  \vspace*{1cm}
+
+  {\Large \textbf{\placeholder{University Name}}\par}
+  \vspace{0.4cm}
+  {\large \placeholder{Faculty / School / Department}\par}
+
+  \vfill
+  {\Huge \textbf{\reporttitle}\par}
+  \vspace{0.8cm}
+  {\Large \textbf{\placeholder{Internship Position or Project Title}}\par}
+
+  \vfill
+  \begin{tabular}{>{\raggedleft\arraybackslash}p{0.34\textwidth} p{0.46\textwidth}}
+    Student: & \placeholder{Your full name} \\
+    Student ID: & \placeholder{Your student ID} \\
+    Program: & \placeholder{Degree program} \\
+    Host organization: & \placeholder{Company name} \\
+    Industrial supervisor: & \placeholder{Supervisor name} \\
+    Academic supervisor: & \placeholder{Supervisor name} \\
+    Internship period: & \placeholder{Start date -- End date} \\
+  \end{tabular}
+
+  \vfill
+  {\placeholder{City, Country}\\\placeholder{Month Year}\par}
+\end{titlepage}
+\hypersetup{pageanchor=true}
+
+% ---------- Front matter ----------
+\pagenumbering{roman}
+
+\chapter*{Declaration}
+I declare that this report is my own work and that all sources and contributions have been appropriately acknowledged.
+
+\vspace{1.5cm}
+\noindent\placeholder{Your name} \hfill \placeholder{Date}
+
+\chapter*{Acknowledgements}
+Thank the company, supervisors, colleagues, and anyone else who supported your internship.
+
+\chapter*{Executive Summary}
+Summarize the internship in approximately 150--250 words. State the organization, internship objective, main responsibilities, key technical outcomes, and what you learned.
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\clearpage
+\pagenumbering{arabic}
+
+% ---------- Main report ----------
+\chapter{Introduction}
+\section{Internship background}
+Explain why the internship was undertaken and how it relates to your academic program.
+
+\section{Objectives}
+List the objectives agreed with the company and your university.
+\begin{itemize}
+  \item \placeholder{Objective 1}
+  \item \placeholder{Objective 2}
+  \item \placeholder{Objective 3}
+\end{itemize}
+
+\section{Report structure}
+Briefly explain how the remainder of this report is organized.
+
+\chapter{Host Organization and Working Environment}
+\section{Company overview}
+Describe the company, its industry, products or services, locations, and approximate scale.
+
+\section{Department and team}
+Describe the department, team structure, your role, and how your work supported the organization.
+
+\section{Industrial context}
+Explain the business or engineering problem that motivated your internship work.
+
+\chapter{Internship Scope and Methodology}
+\section{Scope of work}
+Define what was included in your internship and what was outside its scope.
+
+\section{Tools and technologies}
+\begin{table}[H]
+  \centering
+  \caption{Tools and technologies used during the internship.}
+  \label{tab:tools}
+  \begin{tabular}{p{0.28\textwidth} p{0.58\textwidth}}
+    \toprule
+    Tool / technology & Purpose \\
+    \midrule
+    \placeholder{Tool 1} & \placeholder{How it was used} \\
+    \placeholder{Tool 2} & \placeholder{How it was used} \\
+    \placeholder{Tool 3} & \placeholder{How it was used} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{Work process}
+Describe your workflow: requirements, planning, implementation, testing, documentation, and review.
+
+\chapter{Work Performed}
+Use one section for each major task or project. Explain your responsibilities, decisions, implementation, and deliverables.
+
+\section{Task or project 1: \placeholder{Title}}
+\subsection{Problem and requirements}
+\placeholder{Describe the problem and the requirements.}
+
+\subsection{Approach}
+\placeholder{Describe your approach and justify important technical decisions.}
+
+\subsection{Implementation and deliverables}
+\placeholder{Describe what you produced. Add figures, tables, code excerpts, or links where useful.}
+
+% Example figure; replace the filename when you have an image.
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.8\textwidth]{figures/example.png}
+%   \caption{\placeholder{Description of the figure}.}
+%   \label{fig:example}
+% \end{figure}
+
+\section{Task or project 2: \placeholder{Title}}
+\placeholder{Repeat the same structure for another substantial task.}
+
+\chapter{Results and Evaluation}
+\section{Technical results}
+Present measurable outcomes: performance, accuracy, quality, time saved, reliability, completed features, or other relevant metrics.
+
+\section{Validation and testing}
+Explain how the work was tested or reviewed and summarize the results.
+
+\section{Contribution to the organization}
+Describe the practical value of your work for the host organization.
+
+\chapter{Learning and Professional Development}
+\section{Technical knowledge gained}
+Discuss new concepts, tools, methods, and domain knowledge.
+
+\section{Professional skills gained}
+Discuss communication, teamwork, planning, documentation, problem solving, and working with stakeholders.
+
+\section{Relation to academic studies}
+Connect your internship experience to relevant courses and explain any gaps between theory and practice.
+
+\chapter{Challenges and Reflection}
+\section{Challenges encountered}
+Describe the main technical, organizational, or communication challenges.
+
+\section{Solutions and lessons learned}
+Explain how you addressed the challenges and what you would do differently next time.
+
+\section{Limitations and future work}
+State what remains incomplete and recommend realistic next steps.
+
+\chapter{Conclusion}
+Restate the internship objectives, summarize the main results, and give an overall reflection on the experience.
+
+% ---------- Back matter ----------
+\appendix
+\chapter{Additional Materials}
+Include supplementary diagrams, detailed measurements, schedules, screenshots, or selected technical documentation.
+
+\bibliographystyle{plain}
+\nocite{*}
+\bibliography{references}
+
+\end{document}
