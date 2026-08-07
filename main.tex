@@ -2,9 +2,8 @@
 
 % ---------- Page layout and typography ----------
 \usepackage[a4paper,margin=2.5cm]{geometry}
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage{lmodern}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
 \usepackage{setspace}
 \onehalfspacing
 
@@ -87,20 +86,55 @@ Summarize the internship in approximately 150--250 words. State the organization
 \pagenumbering{arabic}
 
 % ---------- Main report ----------
-\chapter{Introduction}
-\section{Internship background}
-Explain why the internship was undertaken and how it relates to your academic program.
+\chapter{Tổng quan về Công ty TNHH Quốc tế Khánh Sinh}
 
-\section{Objectives}
-List the objectives agreed with the company and your university.
-\begin{itemize}
-  \item \placeholder{Objective 1}
-  \item \placeholder{Objective 2}
-  \item \placeholder{Objective 3}
-\end{itemize}
+\section{Lịch sử hình thành và phát triển}
+Công ty TNHH Quốc tế Khánh Sinh (tên giao dịch: \textit{Khanh Sinh Inter Co., Ltd.}) hoạt động trong lĩnh vực sản xuất phân bón và các sản phẩm hóa chất liên quan. Theo thông tin doanh nghiệp công khai, công ty bắt đầu hoạt động từ ngày 01/08/1997, có mã số doanh nghiệp 0100776325; giấy chứng nhận đăng ký kinh doanh được cấp ngày 22/12/1998 \cite{company-profile,company-history}.
 
-\section{Report structure}
-Briefly explain how the remainder of this report is organized.
+Trước khi hoạt động dưới mô hình công ty, Khánh Sinh được mô tả là một xưởng sản xuất phân bón nhỏ, tập trung phục vụ nhu cầu của nông dân tại các huyện ngoại thành Hà Nội và vùng lân cận. Tài liệu nghiên cứu về doanh nghiệp này ghi nhận xưởng ban đầu có diện tích khoảng 400\,m$^2$, khoảng 30 lao động và năng suất ước tính 3--4 tấn/ngày \cite{company-management-study}. Sau khi chính thức hoạt động, công ty phát triển theo hướng sản xuất và phân phối phân bón cho thị trường miền Bắc. Thông tin tuyển dụng công khai năm 2017 cũng giới thiệu Khánh Sinh là một trong các đơn vị hoạt động trong lĩnh vực sản xuất phân bón tại khu vực này \cite{company-history}.
+
+Trong quá trình phát triển, công ty vừa duy trì hoạt động sản xuất vừa mở rộng kênh phân phối. Một tài liệu chuyên khảo trước đây cho biết sản phẩm được đưa ra thị trường thông qua các trung gian phân phối tại nhiều địa phương; dữ liệu này phản ánh giai đoạn nghiên cứu của tài liệu và cần được đối chiếu với số liệu nội bộ hiện tại \cite{company-management-study}.
+
+\section{Mô hình quản lý của công ty}
+Thông tin công khai hiện hành xác định ông Lưu Đức Khánh là người đại diện theo pháp luật và giám đốc công ty \cite{company-profile}. Tài liệu chuyên khảo về Khánh Sinh mô tả bộ máy quản lý theo mô hình chức năng: cấp điều hành trung tâm phối hợp với các bộ phận kinh doanh, tài chính--kế toán, kỹ thuật và sản xuất \cite{company-management-study}. Mô hình này giúp phân định trách nhiệm theo chuyên môn, đồng thời liên kết hoạt động sản xuất với tiêu thụ và kiểm soát tài chính.
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.72\textwidth}{\centering
+    \textbf{Giám đốc điều hành}\\[0.5em]
+    \rule{0.9\linewidth}{0.4pt}\\[-0.2em]
+    \begin{tabular}{cc}
+      Phòng kinh doanh & \shortstack{Phòng tài chính--\\kế toán} \\
+      Phòng kỹ thuật & Bộ phận sản xuất
+    \end{tabular}
+  }}
+  \caption{Mô hình quản lý chức năng tham khảo của Công ty TNHH Quốc tế Khánh Sinh.}
+  \label{fig:khanh-sinh-management-model}
+\end{figure}
+
+Trong đó, phòng kinh doanh tổ chức và điều hành hoạt động phân phối; bộ phận kỹ thuật hỗ trợ chuyên môn; bộ phận sản xuất tổ chức thực hiện kế hoạch sản xuất; còn phòng tài chính--kế toán theo dõi nguồn lực tài chính và hạch toán. Sơ đồ trong \cref{fig:khanh-sinh-management-model} được tổng hợp từ tài liệu công khai có tính lịch sử, không thay thế cho sơ đồ tổ chức chính thức hiện hành. Khi hoàn thiện báo cáo, cần xác nhận tên phòng ban, người phụ trách và tuyến báo cáo với người hướng dẫn tại doanh nghiệp.
+
+\section{Giới thiệu sản phẩm công ty và nhà máy sản xuất phân bón}
+Các nguồn công khai cho thấy Khánh Sinh sản xuất và kinh doanh phân bón, trong đó có dòng phân bón NPK Khánh Sinh và sản phẩm Khánh Sinh (ORGANMIX) \cite{npk-market-report,organmix-registration}. Hồ sơ công bố sản phẩm ghi nhận ORGANMIX có hàm lượng chất hữu cơ 15\%, tỷ lệ N--P$_2$O$_5$--K$_2$O là 3--3--2, bổ sung axit humic 1\% và độ ẩm 25\% \cite{organmix-registration}. Các thông số này cần được kiểm tra lại trên nhãn hàng hóa, hồ sơ kỹ thuật hoặc tiêu chuẩn cơ sở đang áp dụng trước khi dùng làm dữ liệu chính thức trong báo cáo.
+
+Nhà máy sản xuất phân bón của công ty được ghi nhận tại thôn Trán Voi, xã Phú Mãn, huyện Quốc Oai, Thành phố Hà Nội. Theo danh sách giấy chứng nhận công khai, cơ sở có giấy chứng nhận số 0499/GCN-BVTV-PB, thời hạn đến 06/07/2027, với công suất ghi nhận 2.000 tấn/năm \cite{fertilizer-production-license}. Đây là cơ sở để công ty tổ chức sản xuất, kiểm soát chất lượng và cung ứng sản phẩm cho hệ thống phân phối.
+
+\begin{table}[H]
+  \centering
+  \caption{Một số thông tin công khai về sản phẩm và nhà máy của Khánh Sinh.}
+  \label{tab:khanh-sinh-products-factory}
+  \begin{tabular}{p{0.31\textwidth} p{0.55\textwidth}}
+    \toprule
+    Nội dung & Thông tin \\
+    \midrule
+    Nhóm sản phẩm & Phân bón NPK Khánh Sinh; Khánh Sinh (ORGANMIX). \\
+    ORGANMIX & Hữu cơ 15\%; N--P$_2$O$_5$--K$_2$O: 3--3--2; axit humic 1\%. \\
+    Địa điểm nhà máy & Thôn Trán Voi, xã Phú Mãn, huyện Quốc Oai, Thành phố Hà Nội. \\
+    Công suất được công bố & 2.000 tấn/năm. \\
+    Giấy chứng nhận & 0499/GCN-BVTV-PB; hiệu lực đến 06/07/2027. \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
 \chapter{Host Organization and Working Environment}
 \section{Company overview}
