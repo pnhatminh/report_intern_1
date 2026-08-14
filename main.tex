@@ -12,10 +12,16 @@
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{longtable}
+\usepackage{multirow}
+\usepackage{pdflscape}
+\usepackage{pgfplots}
 \usepackage{xcolor}
 \usepackage{float}
+\usepackage{amsmath}
 \usepackage{hyperref}
 \usepackage[nameinlink,capitalise,noabbrev]{cleveref}
+
+\pgfplotsset{compat=1.18}
 
 \hypersetup{
   colorlinks=true,
@@ -242,18 +248,22 @@ Việc phối trộn không đồng đều hoặc nguyên liệu có hàm lượ
 
 \subsection{Phân hữu cơ}
 Theo Thông tư số 07/2026/TT-BNNMT, phân bón hữu cơ là nhóm phân bón được sản xuất chủ yếu từ các chất hữu cơ tự nhiên, không bao gồm các chất hữu cơ tổng hợp, và có thể được xử lý thông qua các quá trình vật lý như làm khô, nghiền, sàng, phối trộn, làm ẩm hoặc các quá trình sinh học như ủ, lên men và chiết \cite{circular-07-2026-fertilizer}.
-Phân hữu cơ được sản xuất chủ yếu từ nguyên liệu hữu cơ tự nhiên đã qua xử lý; các nguyên liệu có thể bao gồm phân động vật, phụ phẩm cây trồng, vật liệu thực vật và compost. 
-Compost là sản phẩm của quá trình quản lý, trong đó vi sinh vật phân hủy vật liệu thực vật và động vật thành dạng ổn định, phù hợp để bón cho đất \cite{usda-compost}.
+Nguồn nguyên liệu dùng để sản xuất phân hữu cơ có thể bao gồm phân động vật, phụ phẩm cây trồng, vật liệu thực vật, compost và các nguồn hữu cơ có khả năng cung cấp chất hữu cơ và dinh dưỡng cho đất.
 
-Khác với nhiều loại phân vô cơ, vai trò của phân hữu cơ không chỉ là cung cấp dinh dưỡng mà còn là bổ sung chất hữu cơ cho đất. 
-Chất hữu cơ góp phần cải thiện điều kiện vật lý, hóa học và sinh học của đất, đồng thời hỗ trợ khả năng giữ nước và dinh dưỡng \cite{fao-organic-fertilizers,usda-soil-building}. Dinh dưỡng trong vật liệu hữu cơ thường cần được phân giải và khoáng hóa trước khi cây hấp thu, vì vậy tốc độ cung cấp dinh dưỡng phụ thuộc vào nguyên liệu, mức độ phân hủy và điều kiện đất \cite{fao-organic-fertilizers}.
+Khác với phần lớn phân vô cơ, vai trò của phân hữu cơ không chỉ nằm ở việc cung cấp trực tiếp các nguyên tố dinh dưỡng mà còn ở việc bổ sung chất hữu cơ cho đất. 
+Việc tăng hàm lượng chất hữu cơ có thể góp phần cải thiện cấu trúc đất, khả năng giữ nước, khả năng giữ và cung cấp dinh dưỡng cũng như hoạt động của hệ sinh vật đất.
 
-Thành phần phân hữu cơ có thể biến động đáng kể theo nguồn nguyên liệu và phương pháp xử lý. Do đó, kiểm soát chất lượng cần xem xét chất hữu cơ hoặc carbon hữu cơ, tổng N-P$_2$O$_5$-K$_2$O, cùng các chỉ tiêu an toàn hoặc kim loại nặng theo quy chuẩn kỹ thuật và hồ sơ sản phẩm áp dụng \cite{qcvn-fertilizer-quality,qcvn106-fertilizer-quality}.
+Các chất dinh dưỡng trong vật liệu hữu cơ thường phải trải qua quá trình phân giải và khoáng hóa trước khi chuyển thành dạng mà cây có thể hấp thu. 
+Vì vậy, tốc độ cung cấp dinh dưỡng của phân hữu cơ thường phụ thuộc vào đặc tính nguyên liệu, mức độ phân hủy, nhiệt độ, độ ẩm và điều kiện của đất. 
+Điều này tạo ra sự khác biệt cơ bản so với nhiều loại phân vô cơ có hàm lượng dinh dưỡng cao và các chất dinh dưỡng dễ hòa tan hơn.
 
-\subsubsection{Phân hữu cơ - khoáng}
-Phân hữu cơ - khoáng kết hợp nguồn chất hữu cơ với dinh dưỡng khoáng. Về nguyên tắc, nhóm sản phẩm này vừa bổ sung vật chất hữu cơ cho đất vừa cung cấp N, P, K hoặc các chất dinh dưỡng khác theo công thức công bố. Việc kết hợp có thể giúp chuẩn hóa hàm lượng dinh dưỡng hơn so với nguồn hữu cơ đơn thuần, trong khi phần hữu cơ vẫn góp phần cải thiện đất \cite{fao-organic-fertilizers,usda-soil-building}.
+Một hướng phát triển quan trọng trong thực tế sản xuất là kết hợp nguồn chất hữu cơ với dinh dưỡng khoáng để tạo ra phân hữu cơ - khoáng.
+Về nguyên tắc, sự kết hợp này cho phép sản phẩm vừa bổ sung chất hữu cơ cho đất vừa cung cấp các thành phần khoáng như N, P, K hoặc các nguyên tố dinh dưỡng khác theo công thức sản phẩm. 
+So với phân hữu cơ thông thường, việc bổ sung nguồn dinh dưỡng khoáng vừa có thể giúp bổ sung các nguyên tố dinh dưỡng cần thiết cho cây trồng, trong khi thành phần hữu cơ vẫn đóng vai trò bổ sung vật chất hữu cơ cho đất nhằm cải thiện chất lượng đất.\cite{fao-organic-fertilizers,qcvn106-fertilizer-quality}
 
-Đối với phân hữu cơ - khoáng, công tác kiểm soát chất lượng cần xem xét đồng thời chỉ tiêu của phần hữu cơ và chỉ tiêu dinh dưỡng khoáng. Điều này làm cho hoạt động kiểm nghiệm có tính tổng hợp hơn so với việc chỉ xác định một nguyên tố trong phân đơn \cite{company-internal-document,qcvn106-fertilizer-quality}.
+Một đặc điểm cần lưu ý là thành phần của phân hữu cơ có thể biến động đáng kể tùy thuộc vào nguồn nguyên liệu và phương pháp xử lý. 
+Vì vậy, kiểm định nguyên liệu đầu vào và thành phẩm cũng đặc biệt quan trọng đối với sản xuất phân hữu cơ. 
+FAO cho biết chất lượng phân hữu cơ có thể thay đổi rất rộng theo nguyên liệu sử dụng và đề xuất đánh giá các tiêu chí như hàm lượng chất hữu cơ, carbon hữu cơ, tổng N-P$_2$O$_5$-K$_2$O và một số kim loại nặng.\cite{fao-organic-fertilizers,qcvn106-fertilizer-quality} 
 
 \subsection{Mối liên hệ giữa nhóm phân bón và kiểm soát chất lượng}
 Các nhóm phân bón khác nhau về nguồn nguyên liệu, thành phần và đặc tính dinh dưỡng nên chỉ tiêu kiểm nghiệm cũng không hoàn toàn giống nhau. Đối với phân đơn, việc kiểm định thường tập trung vào N, P$_2$O$_5$ hoặc K$_2$O; đối với phân đa dinh dưỡng, cần kiểm soát đồng thời nhiều chỉ tiêu đa lượng, trung lượng và vi lượng; đối với phân hữu cơ, cần quan tâm thêm đến chất hữu cơ, carbon hữu cơ và các chỉ tiêu an toàn liên quan đến nguyên liệu \cite{fao-fertilizer-specifications,qcvn106-fertilizer-quality}.
@@ -606,81 +616,1249 @@ Quy trình kiểm tra chất lượng tại phòng thí nghiệm được thực
 Trong phạm vi thực tập, các chỉ tiêu cơ bản được theo dõi gồm đạm tổng số, kali hữu hiệu quy đổi theo K$_2$O, lân hữu hiệu quy đổi theo P$_2$O$_5$, carbon tổng và độ ẩm. Việc lựa chọn phương pháp phụ thuộc vào nền mẫu, dải nồng độ, thiết bị hiện có và quy trình nội bộ của công ty \cite{company-internal-document,qcvn-fertilizer-quality}.
 
 \subsection{Nguyên tắc chung}
-Trước khi phân tích, mẫu được kiểm tra nhãn, mã lô và tình trạng bao gói; sau đó được nghiền, trộn đồng nhất và rút gọn theo quy định để bảo đảm tính đại diện. 
-
-Dụng cụ, hóa chất, thiết bị đo và dung dịch chuẩn phải phù hợp với phép thử. 
-
-Các thiết bị như cân phân tích, tủ sấy hoặc máy đo ngọn lửa được kiểm tra tình trạng hoạt động và hiệu chuẩn theo kế hoạch của phòng thí nghiệm trước khi sử dụng \cite{company-internal-document}.
-
-Mỗi phép thử cần có mẫu trắng, mẫu chuẩn hoặc mẫu kiểm soát chất lượng khi phù hợp. 
-
-Kết quả được ghi trực tiếp vào biểu mẫu, kiểm tra tính hợp lý và đối chiếu với giới hạn kỹ thuật của sản phẩm. 
-
-Khi có dấu hiệu bất thường, nhân viên phụ trách xem xét việc phân tích lặp lại, pha loãng lại mẫu hoặc kiểm tra chéo bằng mẫu lưu trước khi đưa ra kết luận \cite{company-internal-document}.
+\begin{itemize}
+  \item Trước khi phân tích, mẫu được kiểm tra nhãn, mã lô và tình trạng bao gói; sau đó được nghiền, trộn đồng nhất và rút gọn theo quy định để bảo đảm tính đại diện. 
+  \item Dụng cụ, hóa chất, thiết bị đo và dung dịch chuẩn phải phù hợp với phép thử. 
+  \item Các thiết bị như cân phân tích, tủ sấy hoặc máy đo ngọn lửa được kiểm tra tình trạng hoạt động và hiệu chuẩn theo kế hoạch của phòng thí nghiệm trước khi sử dụng \cite{company-internal-document}.
+  \item Mỗi phép thử cần có mẫu trắng, mẫu chuẩn hoặc mẫu kiểm soát chất lượng khi phù hợp. 
+  \item Kết quả được ghi trực tiếp vào biểu mẫu, kiểm tra tính hợp lý và đối chiếu với giới hạn kỹ thuật của sản phẩm. 
+  \item Khi có dấu hiệu bất thường, nhân viên phụ trách xem xét việc phân tích lặp lại, pha loãng lại mẫu hoặc kiểm tra chéo bằng mẫu lưu trước khi đưa ra kết luận \cite{company-internal-document}.
+\end{itemize}
 
 \subsection{Xác định đạm tổng số}
-Đạm tổng số thường được xác định bằng phương pháp Kjeldahl, là phương pháp phổ biến trong các phòng kiểm nghiệm phân bón. Mẫu được vô cơ hóa bằng axit sulfuric với chất xúc tác để chuyển nitơ về dạng amoni. Sau khi dung dịch vô cơ hóa nguội, môi trường được kiềm hóa để giải phóng amoniac; amoniac được chưng cất, hấp thụ vào dung dịch thích hợp và chuẩn độ bằng dung dịch axit chuẩn. Từ thể tích chuẩn độ, hàm lượng nitơ tổng số được tính theo khối lượng mẫu ban đầu và biểu thị theo phần trăm khối lượng \cite{company-internal-document,qcvn-fertilizer-quality}.
+\subsubsection{Nguyên tắc}
+Tại phòng thí nghiệm của Công ty TNHH Quốc tế Khánh Sinh, phương pháp Kjeldahl kết hợp chưng cất được thực hiện để xác định hàm lượng đạm tổng số trong mẫu phân bón.
+Cụ thể, các hợp chất chứa nitơ trong mẫu được vô cơ hóa bằng axit sulfuric (H$_2$SO$_4$) đậm đặc trong môi trường xúc tác để chuyển hóa thành amoni sulfat.
+\[
+  \text{Hợp chất chứa N}
+  \xrightarrow[\Delta]{\mathrm{H_2SO_4}}
+  \mathrm{(NH_4)_2SO_4 + CO_2 + H_2O + \text{sản phẩm khác}}
+\]
 
-Khi thực hiện phép thử, cần kiểm soát chặt chẽ giai đoạn vô cơ hóa, tránh thất thoát amoniac trong quá trình chưng cất và thực hiện mẫu trắng cùng điều kiện với mẫu thử. Đối với các nền mẫu đặc biệt hoặc khi quy trình nội bộ quy định, phương pháp đốt cháy theo Dumas có thể được sử dụng như một lựa chọn thay thế có tốc độ phân tích cao hơn.
+Sau đó, dung dịch được kiềm hóa bằng NaOH để giải phóng khí amoniac (NH$_3$).
+\[
+  \mathrm{NH_4^+ + OH^- \longrightarrow NH_3 \uparrow + H_2O}
+\]
+Khí amoniac được dẫn vào bình hứng chứa dung dịch axit boric (H$_3$BO$_3$) để hấp thụ và tạo thành hệ amoni-tetrahydroxyborat.
+\[
+  \mathrm{NH_3 + H_3BO_3 + H_2O \longrightarrow NH_4^+ + B(OH)_4^-}
+\]
+
+Cuối cùng, lượng nitơ trong mẫu được xác định bằng cách chuẩn độ dung dịch amoni-tetrahydroxyborat với dung dịch axit sulfuric chuẩn (H$_2$SO$_4$) 0,1 N, sử dụng chỉ thị màu hỗn hợp metyl đỏ - bromocresol xanh để xác định điểm kết thúc của phản ứng.
+\[
+  \mathrm{2NH_4^+ + 2B(OH)_4^- + H_2SO_4 \longrightarrow (NH_4)_2SO_4 + 2H_3BO_3 + 2H_2O}
+\]
+Phản ứng trung hoà được biểu thị bằng sự thay đổi màu sắc từ xanh thành đỏ của dung dịch.
+
+\subsubsection{Thiết bị, hóa chất và thuốc thử}
++ Hóa chất và thuốc thử.
+\begin{itemize}
+  \item Axit sulfuric (H2SO4) đậm đặc (d = 1,84).
+  \item Axit sulfuric chuẩn (H2SO4) 0,1 N
+  \item Natri hydroxit (NaOH) tinh thể
+  \item Metyl đỏ (C15H15N3O2) tinh thể
+  \item Bromocresol xanh (C21H14Br4O5S) tinh thể
+  \item Kali sulfat (K2SO4) tinh thể
+  \item Đồng sulfat (CuSO4.2H2O) tinh thể
+  \item Axit boric (HBO3) tinh thể
+  \item Giấy chỉ thị pH
+  \item Amoni sulfat (NH4)2SO4
+  \item Phenolphtalein (C20H14O4) tinh thể
+\end{itemize}
+
++ Thiết bị và dụng cụ
+\begin{itemize}
+  \item Các dụng cụ thông thường trong phòng thí nghiệm.
+  \item Cân phân tích, có độ chính xác đến ± 0,0001 g.
+  \item Bếp phân hủy mẫu, có điều khiển nhiệt độ.
+  \item Rây, có đường kính lỗ 0,5 mm; 1 mm.
+  \item Thiết bị chưng cất Kjeldahl.
+  \item Buret dung tích 50ml.
+  \item Thiết bị chưng cất gồm: \begin{itemize}
+    \item Bình kendan 500 - 800 ml hoặc bình cầu đáy tròn dung tích 1000 ml;
+    \item Đầu nút thủy tinh hình cầu để ngăn tia bắn;
+    \item Phễu nhỏ giọt dung tích 100 ml ;
+    \item Ống sinh hàn làm nguội bằng nước;
+    \item Bình hứng: bình tam giác hoặc cốc thủy tinh dung tích 250 ml;
+    \item Bi thủy tinh đường kính 2 - 3 mm.
+  \end{itemize}
+\end{itemize}
+
+\subsubsection{Quy trình phân tích}
+
+a. Kiểm tra thiết bị chưng cất
+\begin{itemize}
+  \item Kiểm tra độ kín của hệ thống chưng cất bằng dung dịch tiêu chuẩn.
+  \item Trước khi chưng cất mẫu phải kiểm tra thiết bị Kjeldhal bằng cách chưng cất 50 mL dung dịch tiêu chuẩn amoni sulfat 0,5 mg N/mL với kiềm.
+  Chuẩn độ lượng nitơ trong bình hứng hết 17,85 mL ± 0,1 mL dung dịch chuẩn độ tiêu chuẩn acid sulfuric 0,1 N là đạt yêu cầu. 
+  \begin{itemize}
+    \item Nếu ít hơn là do thiết bị chưng cất bị hở.
+    \item Nếu lớn hơn có thể là do bị bắn kiềm từ bình cất hoặc do thiết bị không sạch, cần khắc phục và kiểm tra lại.
+  \end{itemize}
+\end{itemize}
+
+b. Chuẩn bị hoá chất
+\begin{itemize}
+  \item Dung dịch natri hydroxit (NaOH) 40\%: Cân chính xác 400 g NaOH tinh thể, hòa tan trong khoảng 500 mL nước cất, để nguội và thêm nước đến vạch định mức 1000 mL.
+  \item Phenolphtalein 1\%: Hòa tan 1 g phenolphtalein trong 100 mL cồn 96\%.
+  \item Dung dịch chỉ thị màu hỗn hợp: Hoà tan 0,1g methyl đỏ tinh thể với khoảng 50ml rược etylic 95\% trong cốc dung tích 100ml, sau đó thêm 0,5g bromocresol xanh tinh thể.
+  Đưa toàn bộ hỗn hợp vào bình định mức và lắc đều. Bảo quản tại 20oC, trong lọ nâu để tránh ánh sáng trực tiếp.
+  \item Hỗn hợp xúc tác: Cân 1000g K2SO4 và 100g CuSO4.2H2O trộn đều và nghiền nhỏ.
+  \item Dung dịch axit boric 5\%: Cân chính xác 50 g axit boric tinh thể hoà tan trong 900 mL nước nóng. Sau khi nguội, chuyển vào bình định mức 1000mL thêm nước đến vạch định mức và lắc đều.
+  \item Dung dịch amoni sulfat 0,5 mg N/mL: Cân chính xác 2,3571g amoni sulfat (NH4)2SO4 (đã sấy ở 100oC trong 2h, để trong bình hút ẩm) vào cốc có dung tích 1000 mL, thêm 400ml nước, khuấy đều cho đến khi tan hết và chuyển vào bình định mức 1000 mL, thêm nước đến vạch định mức và lắc đều.
+  Dung dịch được bảo quản kín tại 20oC.
+\end{itemize}
+
+c. Quy trình phân tích
+
+c.1 Phân huỷ mẫu
+
+\begin{itemize}
+  \item Cân chính xác khoảng 0,5000g mẫu thử (±0.0002g) vào bình tam giác 100ml.
+  \item Thêm 0,25g hỗn hợp xúc tác K2SO4:CuSO4 (10:1), tẩm ướt bằng nước cất.
+  \item Thêm 5ml H2SO4 đặc, đậy miệng tam giác bằng phễu nhỏ.
+  \item Gia nhiệt trên bếp ở 250-300oC trong khoảng 4h-6h. Lấy ra và để nguội đến nhiệt độ phòng.
+  \item Tiến hành phân hủy mẫu trắng song song với mẫu thử, với lượng thuốc thử và điều kiện tương tự mẫu thử, nhưng không có mẫu thử.
+\end{itemize}
+
+Phương pháp này áp dụng với mãu phân bón không chưa nito dạng nitrat.
+
+c.2 Chưng cất
+
+\begin{itemize}
+  \item Sau khi phân hủy mẫu và để nguội, chuyển toàn bộ dung dịch đã chuẩn bị ở (c.1) vào bình chưng cất  của thiết bị Kjeldahl.
+  \item Thêm 40 mL NaOH 40\% và khoảng 1 mL chỉ thị PhenolPhtalein 1\% vào bình chưng cất.
+  \item Chuẩn bị bình hứng dung tích 250 mL có chứa 50 mL dung dịch acid boric 5\% đã có hỗn hợp chỉ thị (đuôi ống sinh hàn phải ngập trong dung dịch acid boric khoảng 2 mm).
+  \item Tiến hành tách amoni bằng thiết bị chưng cất Kjeldahl. Kết thúc quá trình chưng cất khi hết amoni (khi dung dịch ngưng khoảng 150 mL).
+  \item Hạ thấp bình hứng, tia rửa đuôi ống sinh hàn vào bình hứng và để nguội.
+\end{itemize}
+
+c.3 Chuẩn độ
+
+\begin{itemize}
+  \item Chuẩn độ amoni tetraborat sau khi chưng cất bằng dung dịch chuẩn độ tiêu chuẩn acid sulfuric 0,1N, lắc liên tục cho đến khi chuyển màu đột ngột từ xanh sang đỏ nhạt. 
+  \item Ghi lại thể tích acid sulfuric đã tiêu tốn.
+\end{itemize}
+
+d. Tính toán kết quả
+Tổng hàm lượng nitơ (N), được tính bằng phần trăm khối lượng theo công thức sau:
+\[
+  \%N = \frac{(V_2 - V_1) \times N_{H_2SO_4} \times 14{,}01}{m \times 1000} \times 100
+\]
+
+Trong đó:
+\begin{itemize}
+  \item $V_1$ là thể tích dung dịch axit sulfuric chuẩn dùng để chuẩn độ mẫu trắng (mL);
+  \item $V_2$ là thể tích dung dịch axit sulfuric chuẩn dùng để chuẩn độ mẫu phân tích (mL);
+  \item $N_{H_2SO_4}$ là nồng độ của dung dịch axit sulfuric dùng để chuẩn độ (N);
+  \item $m$ là khối lượng mẫu cân (g);
+  \item $14{,}01$ là khối lượng mol của nitơ (g/mol).
+\end{itemize}
+
+\subsubsection{Kết quả và nhận xét}
+Kết quả được ghi nhận theo Bảng~\ref{tab:ket-qua-nito}. Mỗi mẫu được trình bày trên hai dòng tương ứng với hai lần lặp; cột KHM và kết quả trung bình được dùng chung cho cả hai lần lặp.
+
+\clearpage
+{\scriptsize
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{longtable}{|>{\centering\arraybackslash}p{0.13\textwidth}|>{\centering\arraybackslash}p{0.10\textwidth}|>{\centering\arraybackslash}p{0.08\textwidth}|>{\centering\arraybackslash}p{0.09\textwidth}|>{\centering\arraybackslash}p{0.10\textwidth}|>{\centering\arraybackslash}p{0.12\textwidth}|>{\centering\arraybackslash}p{0.13\textwidth}|>{\centering\arraybackslash}p{0.12\textwidth}|}
+\caption{Bảng ghi nhận kết quả xác định đạm tổng số}\label{tab:ket-qua-nito} \\
+\hline
+\textbf{Ngày} & \textbf{KHM} & \textbf{Lần lặp} & \textbf{$V_1$ (mL)} & \textbf{$V_2$ (mL)} & \textbf{Khối lượng mẫu (g)} & \textbf{Kết quả (\%N)} & \textbf{KQTB (\%)} \\
+\hline
+\endfirsthead
+\multicolumn{8}{c}{\tablename\ \thetable{} -- tiếp theo} \\
+\hline
+\textbf{Ngày} & \textbf{KHM} & \textbf{Lần lặp} & \textbf{$V_1$ (mL)} & \textbf{$V_2$ (mL)} & \textbf{Khối lượng mẫu (g)} & \textbf{Kết quả (\%N)} & \textbf{KQTB (\%)} \\
+\hline
+\endhead
+\hline
+\multicolumn{8}{r}{\textit{Còn tiếp trang sau}} \\
+\endfoot
+\hline
+\endlastfoot
+\multirow{2}{*}{01/07/2026} & \multirow{2}{*}{501X1} & Lần 1 & 0.3 & 44.0 & 0.5034 & 12.16 & \multirow{2}{*}{12.31} \\
+\cline{3-7} & & Lần 2 & 0.3 & 45.4 & 0.5067 & 12.46 & \\
+\hline
+\multirow{2}{*}{03/07/2026} & \multirow{2}{*}{603X1} & Lần 1 & 0.3 & 52.4 & 0.5084 & 14.36 & \multirow{2}{*}{14.29} \\
+\cline{3-7} & & Lần 2 & 0.3 & 51.2 & 0.5016 & 14.22 & \\
+\hline
+\multirow{2}{*}{03/07/2026} & \multirow{2}{*}{401X2} & Lần 1 & 0.3 & 21.7 & 0.5091 & 5.88 & \multirow{2}{*}{5.88} \\
+\cline{3-7} & & Lần 2 & 0.3 & 21.5 & 0.5053 & 5.88 & \\
+\hline
+\multirow{2}{*}{03/07/2026} & \multirow{2}{*}{400X1} & Lần 1 & 0.3 & 72.2 & 0.5067 & 19.87 & \multirow{2}{*}{19.87} \\
+\cline{3-7} & & Lần 2 & 0.3 & 71.3 & 0.5007 & 19.87 & \\
+\hline
+\multirow{2}{*}{03/07/2026} & \multirow{2}{*}{300X1} & Lần 1 & 0.3 & 34.8 & 0.5062 & 9.56 & \multirow{2}{*}{9.56} \\
+\cline{3-7} & & Lần 2 & 0.3 & 34.8 & 0.5055 & 9.56 & \\
+\hline
+\multirow{2}{*}{03/07/2026} & \multirow{2}{*}{403X1} & Lần 1 & 0.3 & 53.5 & 0.5034 & 14.82 & \multirow{2}{*}{14.88} \\
+\cline{3-7} & & Lần 2 & 0.3 & 54.1 & 0.5045 & 14.95 & \\
+\hline
+\multirow{2}{*}{04/07/2026} & \multirow{2}{*}{401X1} & Lần 1 & 0.3 & 20.4 & 0.5007 & 5.64 & \multirow{2}{*}{5.66} \\
+\cline{3-7} & & Lần 2 & 0.3 & 20.7 & 0.5017 & 5.69 & \\
+\hline
+\multirow{2}{*}{04/07/2026} & \multirow{2}{*}{20X3} & Lần 1 & 0.3 & 70.5 & 0.5016 & 19.62 & \multirow{2}{*}{19.69} \\
+\cline{3-7} & & Lần 2 & 0.3 & 72.0 & 0.5084 & 19.76 & \\
+\hline
+\multirow{2}{*}{05/07/2026} & \multirow{2}{*}{507X1} & Lần 1 & 0.3 & 47.8 & 0.5067 & 13.13 & \multirow{2}{*}{13.26} \\
+\cline{3-7} & & Lần 2 & 0.3 & 48.6 & 0.5053 & 13.38 & \\
+\hline
+\multirow{2}{*}{05/07/2026} & \multirow{2}{*}{02X1(tr)} & Lần 1 & 0.3 & 72.3 & 0.5031 & 20.06 & \multirow{2}{*}{20.12} \\
+\cline{3-7} & & Lần 2 & 0.3 & 73.4 & 0.5073 & 20.18 & \\
+\hline
+\multirow{2}{*}{06/07/2026} & \multirow{2}{*}{02X1(v)} & Lần 1 & 0.3 & 73.1 & 0.5017 & 20.32 & \multirow{2}{*}{20.38} \\
+\cline{3-7} & & Lần 2 & 0.3 & 73.3 & 0.5001 & 20.45 & \\
+\hline
+\multirow{2}{*}{06/07/2026} & \multirow{2}{*}{01X1} & Lần 1 & 0.3 & 87.6 & 0.5012 & 24.39 & \multirow{2}{*}{24.42} \\
+\cline{3-7} & & Lần 2 & 0.3 & 88.8 & 0.5067 & 24.46 & \\
+\hline
+\multirow{2}{*}{06/07/2026} & \multirow{2}{*}{12X1} & Lần 1 & 0.3 & 42.7 & 0.5038 & 11.78 & \multirow{2}{*}{11.85} \\
+\cline{3-7} & & Lần 2 & 0.3 & 43.6 & 0.5091 & 11.91 & \\
+\hline
+\multirow{2}{*}{06/07/2026} & \multirow{2}{*}{DAP} & Lần 1 & 0.3 & 53.4 & 0.5053 & 14.72 & \multirow{2}{*}{14.78} \\
+\cline{3-7} & & Lần 2 & 0.3 & 53.6 & 0.5031 & 14.85 & \\
+\hline
+\multirow{2}{*}{08/07/2026} & \multirow{2}{*}{05X1} & Lần 1 & 0.3 & 18.0 & 0.5034 & 4.94 & \multirow{2}{*}{4.99} \\
+\cline{3-7} & & Lần 2 & 0.3 & 18.3 & 0.5007 & 5.04 & \\
+\hline
+\multirow{2}{*}{11/07/2026} & \multirow{2}{*}{20X3} & Lần 1 & 0.3 & 73.4 & 0.5073 & 20.19 & \multirow{2}{*}{20.12} \\
+\cline{3-7} & & Lần 2 & 0.3 & 73.1 & 0.5084 & 20.05 & \\
+\hline
+\multirow{2}{*}{11/07/2026} & \multirow{2}{*}{507X1} & Lần 1 & 0.3 & 49.0 & 0.5067 & 13.46 & \multirow{2}{*}{13.52} \\
+\cline{3-7} & & Lần 2 & 0.3 & 49.0 & 0.5017 & 13.59 & \\
+\hline
+\multirow{2}{*}{11/07/2026} & \multirow{2}{*}{01X1} & Lần 1 & 0.3 & 89.1 & 0.5091 & 24.45 & \multirow{2}{*}{24.57} \\
+\cline{3-7} & & Lần 2 & 0.3 & 88.7 & 0.5016 & 24.68 & \\
+\hline
+\multirow{2}{*}{13/07/2026} & \multirow{2}{*}{46X1} & Lần 1 & 0.3 & 161.0 & 0.5031 & 44.76 & \multirow{2}{*}{44.83} \\
+\cline{3-7} & & Lần 2 & 0.3 & 162.8 & 0.5072 & 44.90 & \\
+\hline
+\multirow{2}{*}{14/07/2026} & \multirow{2}{*}{400X1} & Lần 1 & 0.3 & 74.1 & 0.5084 & 20.34 & \multirow{2}{*}{20.40} \\
+\cline{3-7} & & Lần 2 & 0.3 & 74.4 & 0.5073 & 20.47 & \\
+\hline
+\multirow{2}{*}{14/07/2026} & \multirow{2}{*}{403X1} & Lần 1 & 0.3 & 56.9 & 0.5091 & 15.57 & \multirow{2}{*}{15.57} \\
+\cline{3-7} & & Lần 2 & 0.3 & 56.1 & 0.5023 & 15.57 & \\
+\hline
+\multirow{2}{*}{14/07/2026} & \multirow{2}{*}{300X1} & Lần 1 & 0.3 & 33.5 & 0.5045 & 9.22 & \multirow{2}{*}{9.29} \\
+\cline{3-7} & & Lần 2 & 0.3 & 33.8 & 0.5017 & 9.35 & \\
+\hline
+\multirow{2}{*}{14/07/2026} & \multirow{2}{*}{309X1} & Lần 1 & 0.3 & 51.8 & 0.5016 & 14.37 & \multirow{2}{*}{14.43} \\
+\cline{3-7} & & Lần 2 & 0.3 & 52.6 & 0.5055 & 14.50 & \\
+\hline
+\multirow{2}{*}{15/07/2026} & \multirow{2}{*}{507X1} & Lần 1 & 0.3 & 51.3 & 0.5067 & 14.10 & \multirow{2}{*}{14.17} \\
+\cline{3-7} & & Lần 2 & 0.3 & 51.5 & 0.5034 & 14.24 & \\
+\hline
+\multirow{2}{*}{16/07/2026} & \multirow{2}{*}{403X1} & Lần 1 & 0.3 & 51.7 & 0.5007 & 14.39 & \multirow{2}{*}{14.45} \\
+\cline{3-7} & & Lần 2 & 0.3 & 52.8 & 0.5062 & 14.52 & \\
+\hline
+\multirow{2}{*}{16/07/2026} & \multirow{2}{*}{02X1} & Lần 1 & 0.3 & 72.8 & 0.5023 & 20.23 & \multirow{2}{*}{20.30} \\
+\cline{3-7} & & Lần 2 & 0.3 & 74.3 & 0.5091 & 20.37 & \\
+\hline
+\multirow{2}{*}{16/07/2026} & \multirow{2}{*}{46X1} & Lần 1 & 0.3 & 165.9 & 0.5045 & 45.97 & \multirow{2}{*}{45.97} \\
+\cline{3-7} & & Lần 2 & 0.3 & 166.2 & 0.5056 & 45.97 & \\
+\hline
+\multirow{2}{*}{18/07/2026} & \multirow{2}{*}{02X1} & Lần 1 & 0.3 & 72.2 & 0.5019 & 20.06 & \multirow{2}{*}{20.06} \\
+\cline{3-7} & & Lần 2 & 0.3 & 72.0 & 0.5007 & 20.06 & \\
+\hline
+\multirow{2}{*}{20/07/2026} & \multirow{2}{*}{02X1} & Lần 1 & 0.3 & 64.8 & 0.5084 & 17.78 & \multirow{2}{*}{17.94} \\
+\cline{3-7} & & Lần 2 & 0.3 & 65.8 & 0.5073 & 18.10 & \\
+\hline
+\multirow{2}{*}{21/07/2026} & \multirow{2}{*}{402X1} & Lần 1 & 0.3 & 45.7 & 0.5094 & 12.49 & \multirow{2}{*}{12.55} \\
+\cline{3-7} & & Lần 2 & 0.3 & 45.6 & 0.5031 & 12.61 & \\
+\hline
+\multirow{2}{*}{25/07/2026} & \multirow{2}{*}{20X3} & Lần 1 & 0.3 & 65.9 & 0.5091 & 18.05 & \multirow{2}{*}{17.98} \\
+\cline{3-7} & & Lần 2 & 0.3 & 64.9 & 0.5053 & 17.92 & \\
+\hline
+\multirow{2}{*}{25/07/2026} & \multirow{2}{*}{02X1} & Lần 1 & 0.3 & 73.2 & 0.5034 & 20.28 & \multirow{2}{*}{20.34} \\
+\cline{3-7} & & Lần 2 & 0.3 & 73.8 & 0.5045 & 20.40 & \\
+\hline
+\multirow{2}{*}{26/07/2026} & \multirow{2}{*}{20X3} & Lần 1 & 0.3 & 67.6 & 0.5007 & 18.85 & \multirow{2}{*}{18.91} \\
+\cline{3-7} & & Lần 2 & 0.3 & 68.3 & 0.5016 & 18.98 & \\
+\hline
+\multirow{2}{*}{26/07/2026} & \multirow{2}{*}{02X1} & Lần 1 & 0.3 & 74.2 & 0.5067 & 20.43 & \multirow{2}{*}{20.43} \\
+\cline{3-7} & & Lần 2 & 0.3 & 73.7 & 0.5034 & 20.43 & \\
+\hline
+\multirow{2}{*}{27/07/2026} & \multirow{2}{*}{02X1} & Lần 1 & 0.3 & 74.1 & 0.5073 & 20.38 & \multirow{2}{*}{20.31} \\
+\cline{3-7} & & Lần 2 & 0.3 & 72.8 & 0.5017 & 20.25 & \\
+\hline
+\multirow{2}{*}{27/07/2026} & \multirow{2}{*}{01X1} & Lần 1 & 0.3 & 88.0 & 0.5016 & 24.50 & \multirow{2}{*}{24.57} \\
+\cline{3-7} & & Lần 2 & 0.3 & 88.6 & 0.5018 & 24.64 & \\
+\hline
+\multirow{2}{*}{27/07/2026} & \multirow{2}{*}{20X3} & Lần 1 & 0.3 & 68.9 & 0.5031 & 19.10 & \multirow{2}{*}{19.07} \\
+\cline{3-7} & & Lần 2 & 0.3 & 68.6 & 0.5025 & 19.03 & \\
+\hline
+\multirow{2}{*}{27/07/2026} & \multirow{2}{*}{408X3} & Lần 1 & 0.3 & 36.2 & 0.5053 & 9.95 & \multirow{2}{*}{10.02} \\
+\cline{3-7} & & Lần 2 & 0.3 & 36.6 & 0.5045 & 10.09 & \\
+\hline
+\multirow{2}{*}{28/07/2026} & \multirow{2}{*}{01X1} & Lần 1 & 0.3 & 90.7 & 0.5091 & 24.88 & \multirow{2}{*}{25.02} \\
+\cline{3-7} & & Lần 2 & 0.3 & 91.3 & 0.5067 & 25.17 & \\
+\hline
+\multirow{2}{*}{29/07/2026} & \multirow{2}{*}{01X1} & Lần 1 & 0.3 & 91.2 & 0.5084 & 25.06 & \multirow{2}{*}{25.06} \\
+\cline{3-7} & & Lần 2 & 0.3 & 89.9 & 0.5007 & 25.06 & \\
+\hline
+\multirow{2}{*}{30/07/2026} & \multirow{2}{*}{01X1} & Lần 1 & 0.3 & 89.2 & 0.5016 & 24.83 & \multirow{2}{*}{24.83} \\
+\cline{3-7} & & Lần 2 & 0.3 & 89.5 & 0.5034 & 24.83 & \\
+\hline
+\end{longtable}
+}
+
+\noindent\textbf{Nhận xét:} Hiệu số thể tích chuẩn độ giữa mẫu thử và mẫu trắng cần được ghi nhận ổn định giữa các lần lặp. Hàm lượng \%N tính được được so sánh với chỉ tiêu công bố của sản phẩm; khi chênh lệch giữa các lần lặp vượt giới hạn kiểm soát nội bộ, cần kiểm tra lại quá trình phân hủy, chưng cất và chuẩn độ.
 
 \subsection{Xác định kali hữu hiệu}
-Kali hữu hiệu thường được xác định sau bước hòa tan hoặc chiết mẫu bằng dung môi phù hợp với loại phân bón. Dung dịch thu được được đo bằng quang kế ngọn lửa hoặc phương pháp quang phổ hấp thụ nguyên tử; cường độ tín hiệu của kali được so sánh với dãy dung dịch chuẩn để xác định nồng độ. Kết quả sau đó được quy đổi và báo cáo theo hàm lượng K$_2$O hữu hiệu \cite{company-internal-document,tcvn8560-potassium}.
+\subsubsection{Nguyên tắc}
+Nguyên tắc của phương pháp là chiết kali trong mẫu phân bón bằng dung dịch HCl, sau đó xác định nồng độ ion kali trong dịch chiết bằng máy quang kế ngọn lửa.
+Khi dung dịch mẫu được đưa vào ngọn lửa, năng lượng nhiệt của ngọn lửa kích thích một phần nguyên tử kali lên trạng thái năng lượng cao hơn thành nguyên tử kali tự do.
+\[
+  \mathrm{K} + \text{năng lượng nhiệt} \longrightarrow \mathrm{K}^{*}
+\]
+Trong đó, $\mathrm{K}^{*}$ là nguyên tử kali ở trạng thái kích thích.
 
-Để bảo đảm độ tin cậy, dung dịch chuẩn kali được chuẩn bị theo dải nồng độ phù hợp, thiết bị được hiệu chỉnh bằng dung dịch trắng và mẫu được pha loãng khi tín hiệu nằm ngoài khoảng tuyến tính. Các yếu tố như độ trong của dung dịch, tạp chất có khả năng gây nhiễu và hệ số pha loãng cần được ghi nhận đầy đủ trong phiếu phân tích.
+Khi các nguyên tử trở về trạng thái năng lượng ban đầu, chúng phát ra bức xạ đặc trưng của kali. 
+\[
+  \mathrm{K}^{*} \longrightarrow \mathrm{K} + h\nu
+\]
+Bức xạ $h\nu$ có bước sóng đặc trưng của kali và được thiết bị ghi nhận để định lượng.
+
+Cường độ bức xạ phát ra được máy quang kế ngọn lửa ghi nhận và so sánh với đường chuẩn dung dịch kali để xác định nồng độ kali trong mẫu.
+
+\subsubsection{Hóa chất, thiết bị và dụng cụ}
++ Hóa chất và thuốc thử:
+\begin{itemize}
+  \item Axit clohydric (HCl) đậm đặc (d = 1,184)
+  \item Xesi clorua (CsCl) tinh thể.
+  \item Dung dịch chuẩn kali gốc 1000 mg/L.
+\end{itemize}
+
++ Thiết bị và dụng cụ:
+\begin{itemize}
+  \item Các dụng cụ thông thường trong phòng thí nghiệm.
+  \item Cân phân tích, có độ chính xác đến ± 0,0001 g.
+  \item Máy quang kế ngọn lửa.
+  \item Rây, có đường kính lỗ 1 mm.
+  \item Bếp khuấy.
+\end{itemize}
+
+\subsubsection{Quy trình phân tích}
+
+a. Chuẩn bị hoá chất
+\begin{itemize}
+  \item Dung dịch axit clohydric 0,1N: Lấy 83,4 mL axit clohydric đậm đặc hòa tan với khoảng 300 mL nước trong bình định mức dung tích 1000 mL. 
+  Thêm nước đến vạch định mức và lắc đều.
+  \item Dung dịch axit clohydric 0,05N: Lấy 50 mL dung dịch axit clohydric 0,1N định mức 1000 mL. Ta thu được dung dịch axit clohydric 0,05N.
+  \item Dung dịch xesi clorua 25 g/L: Hòa tan 25 g xesi tinh thể trong 50 mL axit clohydric đậm đặc và 450 mL nước trong bình định mức dung tích 1000 mL. 
+  Thêm nước đến vạch định mức và lắc đều.
+  \item Dung dịch kali chuẩn 100 mg/L: Dùng pipet hút chính xác 25 mL dung dịch chuẩn kali gốc 1000 mg/L cho vào bình định mức dung tích 250 mL, thêm dung dịch axit clohydric 0,05N tới vạch định mức, lắc đều.
+\end{itemize}
+
+b. Phân huỷ mẫu
+\begin{itemize}
+  \item Cân chính xác khoảng 0,5000g - 1,0000g mẫu thử (±0,0001 g) đã được nghiền nhỏ, chuyển vào bình tam giác 250 mL.
+  \item Thêm vào đó 100 mL dung dịch HCl 0,05N và khuấy cho đến khi tan hết mẫu.
+  \item Chuyển vào bình định mức 250 mL thêm HCl 0,05N đến vạch định mức, lắc đều và lọc dung dịch qua giấy lọc khô. 
+  \item Dung dịch đã lọc được dùng để xác định K2O hữu hiệu (dung dịch A).
+  \item Tiến hành phân hủy mẫu trắng song song với mẫu thử, với lượng thuốc thử và điều kiện tương tự mẫu thử, nhưng không có mẫu thử.
+\end{itemize}
+
+c. Chuẩn bị mẫu thử
+\begin{itemize}
+  \item Dùng pipet hút 10 mL dung dịch A đã được chuẩn bị ở trên vào bình định mức dung tích 100 mL, và định mức tới vạch bằng HCl 0,05N.
+  \item Thêm dung dịch xesi clorua 25 g/L vào dung dịch A trước khi đo với tỉ lệ về thể tích dung dịch xesi clorua 25 g/L và dung dịch A là 1:1.
+\end{itemize}
+
+d. Kiểm tra máy quang kế ngọn lửa
+\begin{itemize}
+  \item Kiểm tra theo hướng dẫn của nhà sản xuất.
+  \item Khởi động máy trước khi sử dụng 15 phút để ổn định ngọn lửa.
+  \item Thiết lập các điều kiện và thông số đo theo hướng dẫn của nhà sản xuất.
+\end{itemize}
+
+\noindent\textbf{e. Xây dựng đường chuẩn}\par
+
+\begin{table}[H]
+  \centering
+  \small
+  \setlength{\tabcolsep}{2pt}
+  \renewcommand{\arraystretch}{1.3}
+  \caption{Chuẩn bị dãy dung dịch chuẩn kali để xây dựng đường chuẩn}
+  \label{tab:duong-chuan-kali}
+  \begin{tabular}{|>{\raggedright\arraybackslash}p{0.42\textwidth}|*{6}{>{\centering\arraybackslash}p{0.08\textwidth}|}}
+    \hline
+    \centering\textbf{Số hiệu bình} & \textbf{S0} & \textbf{S1} & \textbf{S2} & \textbf{S3} & \textbf{S4} & \textbf{S5} \\
+    \hline
+    Thể tích dung dịch chuẩn kali 100 mg/L lấy vào mỗi bình (mL) & 0 & 5 & 10 & 15 & 20 & 25 \\
+    \hline
+    Thể tích dung dịch CsCl 25 g/L thêm vào mỗi bình (mL) & 50 & 50 & 50 & 50 & 50 & 50 \\
+    \hline
+    Thể tích dung dịch HCl 0,05 N thêm đến vạch định mức (mL) & 50 & 47,5 & 45 & 40 & 30 & 20 \\
+    \hline
+    Thể tích định mức (mL) & 100 & 100 & 100 & 100 & 100 & 100 \\
+    \hline
+    Nồng độ dung dịch chuẩn kali (mg/L) & 0,00 & 5,0 & 10,0 & 15,0 & 20,0 & 25,0 \\
+    \hline
+  \end{tabular}
+\end{table}
+
+Thực hiện xây dựng đường chuẩn theo các bước sau:
+\begin{itemize}
+  \item Dùng pipet lấy lần lượt các thể tích dung dịch chuẩn kali 100 mg/L vào các bình định mức S0--S5 theo Bảng~\ref{tab:duong-chuan-kali}.
+  \item Thêm 50 mL dung dịch CsCl 25 g/L vào mỗi bình.
+  \item Thêm dung dịch HCl 0,05 N đến vạch định mức 100 mL theo thể tích tương ứng trong bảng.
+  \item Đậy nút bình, lắc đều để thu được dãy chuẩn có nồng độ từ 0,00 đến 25,0 mg/L.
+  \item Đo cường độ phát xạ của từng dung dịch chuẩn trên máy quang kế ngọn lửa và lập đường chuẩn biểu diễn mối quan hệ giữa cường độ phát xạ và nồng độ kali.
+  \item Dựng đồ thị với trục hoành là nồng độ kali (mg/L) và trục tung là cường độ phát xạ.
+  \[
+    y = ax + b
+  \]
+  \item Dựng lại dãy chuẩn tối thiểu mỗi tuần một lần; sau khoảng 10 mẫu đo, kiểm tra lại đường chuẩn và hiệu chỉnh máy nếu có sai lệch.
+\end{itemize}
+
+\subsubsection{Kết quả xây dựng đường chuẩn}
+Kết quả đo cường độ phát xạ của dãy chuẩn được ghi nhận theo Bảng~\ref{tab:ket-qua-duong-chuan-kali}. Dùng các giá trị này để hồi quy tuyến tính, trong đó $x$ là nồng độ kali và $y$ là cường độ phát xạ.
+
+\begin{table}[H]
+  \centering
+  \small
+  \renewcommand{\arraystretch}{1.3}
+  \caption{Bảng ghi nhận kết quả xây dựng đường chuẩn kali}
+  \label{tab:ket-qua-duong-chuan-kali}
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{|>{\centering\arraybackslash}p{0.14\textwidth}|*{6}{>{\centering\arraybackslash}p{0.12\textwidth}|}}
+    \hline
+    \textbf{Số hiệu bình} & \textbf{S0} & \textbf{S1} & \textbf{S2} & \textbf{S3} & \textbf{S4} & \textbf{S5} \\
+    \hline
+    Nồng độ K (mg/L) & 0,00 & 5,0 & 10,0 & 15,0 & 20,0 & 25,0 \\
+    \hline
+    Cường độ phát xạ & 0 & 5 & 10 & 16 & 21 & 25 \\
+    \hline
+  \end{tabular}
+  }
+\end{table}
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      width=0.82\textwidth,
+      height=0.52\textwidth,
+      xlabel={Nồng độ kali (mg/L)},
+      ylabel={Cường độ phát xạ},
+      xmin=0, xmax=26,
+      ymin=0, ymax=27,
+      xtick={0,5,10,15,20,25},
+      ytick={0,5,10,15,20,25},
+      grid=both,
+      major grid style={gray!35},
+      minor grid style={gray!15},
+      legend style={at={(0.97,0.04)},anchor=south east,font=\small},
+      legend cell align={left}
+    ]
+      \addplot[
+        only marks,
+        mark=*,
+        mark size=2.3pt,
+        blue!75!black
+      ] coordinates {(0,0) (5,5) (10,10) (15,16) (20,21) (25,25)};
+      \addlegendentry{Số liệu chuẩn}
+      \addplot[red!75!black, very thick, domain=0:25, samples=100] {1.022857142857*x + 0.047619047619};
+      \addlegendentry{Hồi quy tuyến tính}
+      \node[
+        anchor=north west,
+        draw=black,
+        fill=white,
+        fill opacity=0.92,
+        text opacity=1,
+        align=left,
+        font=\small
+      ] at (axis cs:1,25.8) {$y = 1{,}0229x + 0{,}0476$\\$R^2 = 0{,}9976$};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Đường hồi quy tuyến tính của dãy chuẩn kali}
+  \label{fig:duong-hoi-quy-kali}
+\end{figure}
+
+\noindent\textbf{Nhận xét đường chuẩn:} Cường độ phát xạ phải tăng theo nồng độ kali trong khoảng 0,00--25,0 mg/L. Đường chuẩn được chấp nhận khi mối quan hệ tuyến tính phù hợp với yêu cầu kiểm soát nội bộ của phòng thí nghiệm; nếu điểm chuẩn có độ lệch bất thường hoặc hệ số tương quan không đạt yêu cầu, cần kiểm tra lại dung dịch chuẩn, thao tác pha loãng và điều kiện vận hành máy.
+
+\noindent\textbf{f. Tính toán kết quả}\par
+Nồng độ kali trong dung dịch mẫu được nội suy từ phương trình đường chuẩn $I=aC+b$:
+\[
+  C_{\mathrm{K}} = \frac{I-b}{a}
+\]
+Trong đó $I$ là cường độ phát xạ của dung dịch mẫu, $C_{\mathrm{K}}$ là nồng độ kali nội suy (mg/L), $a=1{,}0229$ là hệ số góc và $b=0{,}0476$ là hệ số chặn của đường hồi quy.
+
+Hàm lượng kali hữu hiệu, tính theo phần trăm khối lượng, được xác định theo công thức:
+\[
+  \%K = \frac{\left(C_{\mathrm{K}}-C_{\mathrm{blank}}\right) \times f \times V}{m \times 10\,000}
+\]
+
+Hàm lượng kali quy đổi về K$_2$O được tính như sau:
+\[
+  \%K_2O = \%K \times 1{,}205
+\]
+
+Trong đó:
+\begin{itemize}
+  \item $C_{\mathrm{K}}$ là nồng độ kali trong dung dịch mẫu, nội suy từ đường chuẩn (mg/L);
+  \item $C_{\mathrm{blank}}$ là nồng độ kali trong dung dịch mẫu trắng (mg/L);
+  \item $f$ là hệ số pha loãng;
+  \item $V$ là thể tích dung dịch A sau khi chiết (mL);
+  \item $m$ là khối lượng mẫu cân (g);
+  \item $1{,}205$ là hệ số quy đổi từ K sang K$_2$O.
+\end{itemize}
+
+\subsubsection{Kết quả và nhận xét}
+Sau khi nội suy nồng độ kali của mẫu từ đường chuẩn, kết quả được tính và ghi theo Bảng~\ref{tab:ket-qua-kali}.
+
+\begin{landscape}
+\begin{center}
+{\scriptsize
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{|>{\centering\arraybackslash}p{0.09\linewidth}|>{\centering\arraybackslash}p{0.07\linewidth}|>{\centering\arraybackslash}p{0.055\linewidth}|>{\centering\arraybackslash}p{0.07\linewidth}|>{\centering\arraybackslash}p{0.08\linewidth}|>{\centering\arraybackslash}p{0.055\linewidth}|>{\centering\arraybackslash}p{0.055\linewidth}|>{\centering\arraybackslash}p{0.07\linewidth}|>{\centering\arraybackslash}p{0.07\linewidth}|>{\centering\arraybackslash}p{0.05\linewidth}|>{\centering\arraybackslash}p{0.05\linewidth}|>{\centering\arraybackslash}p{0.075\linewidth}|>{\centering\arraybackslash}p{0.08\linewidth}|}
+\caption{Bảng ghi nhận kết quả xác định kali hữu hiệu}\label{tab:ket-qua-kali} \\
+\hline
+\textbf{Ngày} & \textbf{KHM} & \textbf{Lần lặp} & \textbf{$m$ (g)} & \textbf{$I$} & \textbf{$a$} & \textbf{$b$} & \textbf{$C_{\mathrm{K}}$ (mg/L)} & \textbf{$C_{\mathrm{blank}}$ (mg/L)} & \textbf{$f$} & \textbf{$V$ (mL)} & \textbf{Kết quả (\%K$_2$O)} & \textbf{KQTB (\%)} \\
+\hline
+\endfirsthead
+\multicolumn{13}{c}{\tablename\ \thetable{} -- tiếp theo} \\
+\hline
+\textbf{Ngày} & \textbf{KHM} & \textbf{Lần lặp} & \textbf{$m$ (g)} & \textbf{$I$} & \textbf{$a$} & \textbf{$b$} & \textbf{$C_{\mathrm{K}}$ (mg/L)} & \textbf{$C_{\mathrm{blank}}$ (mg/L)} & \textbf{$f$} & \textbf{$V$ (mL)} & \textbf{Kết quả (\%K$_2$O)} & \textbf{KQTB (\%)} \\
+\hline
+\endhead
+\hline
+\multicolumn{13}{r}{\textit{Còn tiếp trang sau}} \\
+\endfoot
+\hline
+\endlastfoot
+\multirow{2}{*}{01/07/2026} & \multirow{2}{*}{501X1} & Lần 1 & 0,5038 & 23 & 1,0229 & 0,0476 & 22,4 & 0 & 250 & 10 & 13,39 & \multirow{2}{*}{13,32} \\
+\cline{3-12} & & Lần 2 & 0,5096 & 23 & 1,0229 & 0,0476 & 22,4 & 0 & 250 & 10 & 13,24 & \\
+\hline
+\multirow{2}{*}{03/07/2026} & \multirow{2}{*}{603X1} & Lần 1 & 0,5013 & 15 & 1,0229 & 0,0476 & 14,4 & 0 & 250 & 10 & 8,65 & \multirow{2}{*}{8,89} \\
+\cline{3-12} & & Lần 2 & 0,5086 & 16 & 1,0229 & 0,0476 & 15,4 & 0 & 250 & 10 & 9,12 & \\
+\hline
+\multirow{2}{*}{03/07/2026} & \multirow{2}{*}{401X2} & Lần 1 & 0,5076 & 6 & 1,0229 & 0,0476 & 5,4 & 0 & 250 & 10 & 3,20 & \multirow{2}{*}{3,20} \\
+\cline{3-12} & & Lần 2 & 0,5076 & 6 & 1,0229 & 0,0476 & 5,4 & 0 & 250 & 10 & 3,20 & \\
+\hline
+\multirow{2}{*}{03/07/2026} & \multirow{2}{*}{400X1} & Lần 1 & 0,5046 & 22 & 1,0229 & 0,0476 & 21,4 & 0 & 250 & 10 & 12,78 & \multirow{2}{*}{12,48} \\
+\cline{3-12} & & Lần 2 & 0,5046 & 21 & 1,0229 & 0,0476 & 20,4 & 0 & 250 & 10 & 12,18 & \\
+\hline
+\multirow{2}{*}{03/07/2026} & \multirow{2}{*}{300X1} & Lần 1 & 0,5173 & 6 & 1,0229 & 0,0476 & 5,4 & 0 & 250 & 10 & 3,14 & \multirow{2}{*}{3,14} \\
+\cline{3-12} & & Lần 2 & 0,5173 & 6 & 1,0229 & 0,0476 & 5,4 & 0 & 250 & 10 & 3,14 & \\
+\hline
+\multirow{2}{*}{03/07/2026} & \multirow{2}{*}{403X1} & Lần 1 & 0,5073 & 10 & 1,0229 & 0,0476 & 9,4 & 0 & 250 & 10 & 5,58 & \multirow{2}{*}{4,99} \\
+\cline{3-12} & & Lần 2 & 0,5073 & 8 & 1,0229 & 0,0476 & 7,4 & 0 & 250 & 10 & 4,39 & \\
+\hline
+\multirow{2}{*}{04/07/2026} & \multirow{2}{*}{401X1} & Lần 1 & 0,5009 & 6 & 1,0229 & 0,0476 & 5,4 & 0 & 250 & 10 & 3,25 & \multirow{2}{*}{3,25} \\
+\cline{3-12} & & Lần 2 & 0,5009 & 6 & 1,0229 & 0,0476 & 5,4 & 0 & 250 & 10 & 3,25 & \\
+\hline
+\multirow{2}{*}{04/07/2026} & \multirow{2}{*}{20X3} & Lần 1 & 0,4999 & 18 & 1,0229 & 0,0476 & 17,5 & 0 & 250 & 10 & 10,75 & \multirow{2}{*}{10,65} \\
+\cline{3-12} & & Lần 2 & 0,5080 & 18 & 1,0229 & 0,0476 & 17,5 & 0 & 250 & 10 & 10,56 & \\
+\hline
+\multirow{2}{*}{05/07/2026} & \multirow{2}{*}{507X1} & Lần 1 & 0,5065 & 13 & 1,0229 & 0,0476 & 12,4 & 0 & 250 & 10 & 7,39 & \multirow{2}{*}{7,43} \\
+\cline{3-12} & & Lần 2 & 0,5006 & 13 & 1,0229 & 0,0476 & 12,4 & 0 & 250 & 10 & 7,46 & \\
+\hline
+\multirow{2}{*}{06/07/2026} & \multirow{2}{*}{12X1} & Lần 1 & 0,5037 & 17 & 1,0229 & 0,0476 & 16,4 & 0 & 250 & 10 & 9,81 & \multirow{2}{*}{9,55} \\
+\cline{3-12} & & Lần 2 & 0,4996 & 16 & 1,0229 & 0,0476 & 15,4 & 0 & 250 & 10 & 9,29 & \\
+\hline
+\multirow{2}{*}{08/07/2026} & \multirow{2}{*}{05X1} & Lần 1 & 0,5051 & 5 & 1,0229 & 0,0476 & 4,8 & 0 & 250 & 10 & 2,86 & \multirow{2}{*}{2,86} \\
+\cline{3-12} & & Lần 2 & 0,5051 & 5 & 1,0229 & 0,0476 & 4,8 & 0 & 250 & 10 & 2,86 & \\
+\hline
+\multirow{2}{*}{11/07/2026} & \multirow{2}{*}{20X3} & Lần 1 & 0,5066 & 17 & 1,0229 & 0,0476 & 16,4 & 0 & 250 & 10 & 9,75 & \multirow{2}{*}{9,82} \\
+\cline{3-12} & & Lần 2 & 0,4995 & 17 & 1,0229 & 0,0476 & 16,4 & 0 & 250 & 10 & 9,88 & \\
+\hline
+\pagebreak
+\multirow{2}{*}{11/07/2026} & \multirow{2}{*}{507X1} & Lần 1 & 0,5019 & 13 & 1,0229 & 0,0476 & 12,4 & 0 & 250 & 10 & 7,44 & \multirow{2}{*}{7,44} \\
+\cline{3-12} & & Lần 2 & 0,5016 & 13 & 1,0229 & 0,0476 & 12,4 & 0 & 250 & 10 & 7,45 & \\
+\hline
+\multirow{2}{*}{16/07/2026} & \multirow{2}{*}{403X1} & Lần 1 & 0,5107 & 10 & 1,0229 & 0,0476 & 9,4 & 0 & 250 & 10 & 5,54 & \multirow{2}{*}{5,61} \\
+\cline{3-12} & & Lần 2 & 0,4991 & 10 & 1,0229 & 0,0476 & 9,4 & 0 & 250 & 10 & 5,67 & \\
+\hline
+\multirow{2}{*}{16/07/2026} & \multirow{2}{*}{94MX1} & Lần 1 & 0,2532 & 26 & 1,0229 & 0,0476 & 25,4 & 0 & 250 & 20 & 60,44 & \multirow{2}{*}{61,71} \\
+\cline{3-12} & & Lần 2 & 0,2067 & 22 & 1,0229 & 0,0476 & 21,4 & 0 & 250 & 20 & 62,99 & \\
+\hline
+\multirow{2}{*}{21/07/2026} & \multirow{2}{*}{402X1} & Lần 1 & 0,5146 & 14 & 1,0229 & 0,0476 & 13,0 & 0 & 250 & 10 & 7,63 & \multirow{2}{*}{7,42} \\
+\cline{3-12} & & Lần 2 & 0,5036 & 13 & 1,0229 & 0,0476 & 12,1 & 0 & 250 & 10 & 7,21 & \\
+\hline
+\multirow{2}{*}{25/07/2026} & \multirow{2}{*}{20X3} & Lần 1 & 0,4995 & 17 & 1,0229 & 0,0476 & 16,0 & 0 & 250 & 10 & 9,64 & \multirow{2}{*}{9,62} \\
+\cline{3-12} & & Lần 2 & 0,5017 & 17 & 1,0229 & 0,0476 & 16,0 & 0 & 250 & 10 & 9,60 & \\
+\hline
+\multirow{2}{*}{26/07/2026} & \multirow{2}{*}{20X3} & Lần 1 & 0,4956 & 18 & 1,0229 & 0,0476 & 17,0 & 0 & 250 & 10 & 10,31 & \multirow{2}{*}{10,44} \\
+\cline{3-12} & & Lần 2 & 0,5117 & 19 & 1,0229 & 0,0476 & 17,9 & 0 & 250 & 10 & 10,56 & \\
+\hline
+\multirow{2}{*}{27/07/2026} & \multirow{2}{*}{408X3} & Lần 1 & 0,4990 & 22 & 1,0229 & 0,0476 & 20,9 & 0 & 250 & 20 & 25,21 & \multirow{2}{*}{25,14} \\
+\cline{3-12} & & Lần 2 & 0,5019 & 22 & 1,0229 & 0,0476 & 20,9 & 0 & 250 & 20 & 25,07 & \\
+\hline
+\multirow{2}{*}{27/07/2026} & \multirow{2}{*}{04X1} & Lần 1 & 0,3931 & 22 & 1,0229 & 0,0476 & 20,9 & 0 & 250 & 20 & 61,95 & \multirow{2}{*}{61,07} \\
+\cline{3-12} & & Lần 2 & 0,3679 & 28 & 1,0229 & 0,0476 & 26,8 & 0 & 250 & 20 & 60,19 & \\
+\hline
+\end{longtable}
+}
+\end{center}
+\end{landscape}
+
+\noindent\textbf{Nhận xét:} Nồng độ kali của dung dịch mẫu cần nằm trong khoảng làm việc của đường chuẩn; nếu vượt khoảng này, mẫu phải được pha loãng thích hợp và tính lại hệ số pha loãng. Kết quả \%K$_2$O được đối chiếu với chỉ tiêu chất lượng của sản phẩm để đánh giá mức độ phù hợp của lô phân bón.
 
 \subsection{Xác định lân hữu hiệu}
-Lân hữu hiệu được xác định bằng cách chiết phần phosphat hòa tan từ mẫu bằng dung dịch chiết theo quy trình áp dụng. Sau đó, phosphat trong dung dịch chiết phản ứng với thuốc thử molybdat để tạo phức màu; cường độ màu được đo bằng máy quang phổ UV--Vis tại bước sóng quy định. Nồng độ phospho được xác định dựa trên đường chuẩn và được quy đổi sang P$_2$O$_5$ hữu hiệu \cite{company-internal-document,qcvn-fertilizer-quality}.
+\subsubsection{Nguyên tắc}
+Đối với kiểm định phân lân, chỉ tiêu thường được quan tâm là hàm lượng phốt pho hữu hiệu, được biểu thị dưới dạng P$_2$O$_5$.
+Phospho hữu hiệu trong mẫu phân bón được chiết bằng dung dịch Petermann, là dung dịch amoni citrat trong môi trường kiềm.
+Ion citrate trong dung dịch Petermann có khả năng tạo phức với ion kim loại, nhờ đó thúc đẩy quá trình hoà tan các dạng muối phosphat có trong phân bón và chuyển phosphat cần xác định vào trong dung dịch.
+Quá trình hòa tan phosphat có thể được biểu diễn khái quát như sau:
+\[
+  \mathrm{M_3(PO_4)_n \rightleftharpoons 3M^{n+} + nPO_4^{3-}}
+\]
+Các ion kim loại giải phóng tiếp tục tạo phức với citrate, làm dịch chuyển cân bằng theo hướng hòa tan:
+\[
+  \mathrm{M^{n+} + Cit^{3-} \rightleftharpoons [M(Cit)]^{(n-3)+}}
+\]
+Trong đó, $\mathrm{M^{n+}}$ là ion kim loại và $\mathrm{Cit^{3-}}$ là ion citrate.
 
-Trong quá trình thao tác, cần bảo đảm thời gian phát triển màu, thể tích thuốc thử và điều kiện đo được giữ ổn định giữa mẫu chuẩn và mẫu thử. Dung dịch có nồng độ cao cần được pha loãng để giá trị hấp thụ nằm trong vùng làm việc của đường chuẩn; nếu mẫu có màu nền hoặc độ đục lớn, cần xử lý theo SOP để hạn chế ảnh hưởng đến phép đo.
+Sau khi thu được dịch chiết trong, lấy một thể tích xác định của dịch này để định lượng phospho. 
+Ion phosphate trong môi trường axit được cho phản ứng với amoni molybdat, tạo kết tủa màu vàng amoni phosphomolybdat:
+\[
+  \mathrm{PO_4^{3-} + 3NH_4^+ + 12MoO_4^{2-} + 24H^+
+  \longrightarrow (NH_4)_3PO_4 \cdot 12MoO_3 \downarrow + 12H_2O}
+\]
+Kết tủa amoni phosphomolybdat được lọc và rửa sạch nhằm loại bỏ lượng axit và thuốc thử còn dư.Sau đó hòa tan bằng dung dịch NaOH chuẩn.
+\[
+  \mathrm{(NH_4)_3PO_4 \cdot 12MoO_3 + 23NaOH
+  \longrightarrow 11Na_2MoO_4 + (NH_4)_2MoO_4 + NaNH_4HPO_4 + 11H_2O}
+\]
+Phần NaOH dư được chuẩn độ bằng dung dịch H$_2$SO$_4$ chuẩn theo phản ứng trung hòa:
+\[
+  \mathrm{2NaOH + H_2SO_4 \longrightarrow Na_2SO_4 + 2H_2O}
+\]
+
+Sau khi kết tủa đã hòa tan hoàn toàn, lượng NaOH còn dư được chuẩn độ bằng dung dịch axit chuẩn H$_2$SO$_4$. 
+Từ đó tính được lượng NaOH đã phản ứng với kết tủa và tính được hàm lượng phospho và quy đổi kết quả về \% P$_2$O$_5$ trong mẫu phân bón.
+
+\subsubsection{Hóa chất, thiết bị và dụng cụ}
++ Hoá chất và thuốc thử
+\begin{itemize}
+  \item Dung dịch natri hydroxit (NaOH) 0,1 N;
+  \item Dung dịch axit citric đậm đặc (d=1,42);
+  \item Dung dịch axit sulfuric (H$_2$SO$_4$) 0,1 N;
+  \item Phenolphtalein (C$_{20}$H$_{14}$O$_4$) dạng tinh thể;
+  \item Metyl đỏ (C$_{15}$H$_{15}$N$_3$O$_2$) dạng tinh thể;
+  \item Xanh metylen (C$_{16}$H$_{18}$ClN$_3S) \cdot HCl$ dạng tinh thể;
+  \item Kali nitrate (KNO$_3$) dạng tinh thể;
+  \item Amoni molipdat (NH$_4$)$_6$Mo$_7$O$_{24} \cdot 4H_2O$ dạng tinh thể;
+  \item Dung dịch amonium hidroxit (NH$_4$OH) 10\%;
+  \item Dung dịch diamoni phosphat 10\%;
+\end{itemize}
+
+
++ Thiết bị và dụng cụ 
+\begin{itemize}
+  \item Các dụng cụ thông thường trong phòng thí nghiệm.
+  \item Cân phân tích, có độ chính xác đến ± 0,0001 g.
+  \item Bếp từ.
+  \item Rây có đường kính lỗ 0,5 mm và 1 mm.
+  \item Burrette 50 mL.
+\end{itemize}
+
+\subsubsection{Cách tiến hành}
+\noindent\textbf{a. Chuẩn bị thuốc thử}
+\begin{itemize}
+  \item Phenolphtalein 1\%: Hòa tan 1 g phenolphtalein trong 100 mL cồn 96\%.
+  \item Dung dịch chỉ thị hỗn hợp: Hòa tan 0,10 g metyl đỏ trong khoảng 50 mL ethanol 95\%, thêm 0,05 g xanh metylen và lắc đến tan hoàn toàn. 
+  Định mức bằng ethanol 95\% đến 100 mL, lắc đều và bảo quản trong lọ nâu ở $20\,^{\circ}\mathrm{C}$.
+  \item Dung dịch kali nitrate (KNO$_3$) 1\%: Hòa tan 1 g KNO$_3$ trong 100 mL nước cất.
+  \item Thuốc thử amoni molipdat 3\%: Cho 832 mL nước vào cốc lần lượt thêm 27 g amoni nitrat, 26,3 g axit citric và 34 g amoni molipdat; khuấy đến tan. 
+  Thêm 28,7 mL HNO$_3$ đậm đặc ($d=1{,}4$), đun sôi, sau đó thêm 2 giọt dung dịch diamoni phosphat 10\%. 
+  Khuấy đều, để nguội, để yên qua đêm, lọc qua giấy lọc và bảo quản trong chai thủy tinh màu nâu.
+  \item Chuẩn hóa dung dịch NH$_4$OH 10\% để pha Petermann: Lấy 10 mL dung dịch NH$_4$OH 10\% vào bình định mức 500 mL đã chứa khoảng 400--450 mL nước; thêm nước đến vạch và lắc đều. 
+  Lấy 25 mL dung dịch đã pha loãng vào bình tam giác 250 mL chứa 25--50 mL nước, thêm 2--3 giọt metyl đỏ và chuẩn độ bằng H$_2$SO$_4$ 0,1 N đến màu hồng; ghi thể tích axit tiêu tốn là $V$ (mL). Thể tích NH$_4$OH 10\% cần lấy để pha 1 L Petermann được tính theo công thức:
+  \[
+    X = \frac{42 \times 10 \times 25}{V \times 0{,}0014 \times 500}
+  \]
+  trong đó $X$ là thể tích NH$_4$OH 10\% cần lấy (mL) và $0{,}0014$ là lượng nitơ tương ứng với 1 mL H$_2$SO$_4$ 0,1 N (g).
+  \item Dung dịch Petermann: Chuyển thể tích $X$ dung dịch NH$_4$OH 10\% vào bình định mức 1 L. Hòa tan 173 g axit citric trong 200--250 mL nước nóng, để nguội về nhiệt độ phòng rồi rót từ từ vào bình chứa NH$_4$OH, đồng thời làm mát bình. Tráng cốc và phễu bằng nước, chuyển nước tráng vào bình, để nguội hoàn toàn, thêm nước đến vạch 1 L và lắc kỹ. Để dung dịch ổn định trong 2 ngày trước khi sử dụng.
+\end{itemize}
+
+\noindent\textbf{b. Quy trình chiết phospho hữu hiệu}
+\begin{itemize}
+  \item Cân khoảng 2,0--2,5 g mẫu đã nghiền nhỏ vào bình tam giác 250 mL.
+  \item Thêm 25 mL dung dịch Petermann, nghiền hoặc khuấy mẫu trong vài phút rồi để cặn lắng.
+  \item Gạn phần dịch chiết vào bình định mức 250 mL qua phễu thủy tinh.
+  \item Lặp lại thao tác chiết thêm ba lần, mỗi lần dùng 25 mL dung dịch Petermann.
+  \item Chuyển toàn bộ cặn còn lại trong cối và trên phễu vào bình định mức; dùng tổng cộng 200 mL dung dịch Petermann cho quá trình chiết.
+  \item Đặt bình trong bếp cách thủy ở $60\,^{\circ}\mathrm{C} \pm 1\,^{\circ}\mathrm{C}$ trong 15 phút.
+  \item Để nguội, thêm dung dịch Petermann đến vạch 250 mL, lắc đều và lọc để thu dịch chiết trong.
+  \item Chuẩn bị mẫu trắng song song, dùng cùng lượng thuốc thử và điều kiện thao tác nhưng không có mẫu phân bón.
+\end{itemize}
+
+\noindent\textbf{c. Quy trình hòa tan mẫu}
+\begin{itemize}
+  \item Pipet chính xác 50 mL dịch chiết trong vào cốc dung tích 250 mL.
+  \item Thêm 5 mL HNO$_3$ đậm đặc, đun sôi nhẹ trong 5 phút rồi để nguội.
+  \item Nhỏ từ từ dung dịch NH$_4$OH đến khi bắt đầu xuất hiện kết tủa.
+  \item Thêm HNO$_3$ 6 N để hòa tan hoàn toàn kết tủa vừa tạo thành.
+\end{itemize}
+
+\noindent\textbf{d. Tiến hành thử nghiệm -- tạo kết tủa}
+\begin{itemize}
+  \item Đun sôi dung dịch đã xử lý trên bếp điện, đồng thời khuấy nhẹ.
+  \item Thêm từ từ 50 mL thuốc thử amoni molipdat 3\% vào dung dịch.
+  \item Tiếp tục đun sôi trong 3 phút, sau đó để kết tủa lắng trong khoảng 30 phút đến 2 giờ.
+  \item Lọc kết tủa qua giấy lọc băng vàng.
+  \item Rửa kết tủa bằng dung dịch KNO$_3$ 1\% đến khi loại hết axit; kiểm tra nước rửa bằng phenolphtalein theo SOP áp dụng.
+\end{itemize}
+
+\noindent\textbf{e. Quy trình chuẩn độ}
+\begin{itemize}
+  \item Chuyển giấy lọc có kết tủa trở lại cốc đã dùng để tạo kết tủa.
+  \item Dùng buret thêm từ từ dung dịch NaOH 0,1 N để hòa tan hoàn toàn kết tủa.
+  \item Thêm dư 5 mL NaOH 0,1 N sau khi kết tủa đã tan hoàn toàn và ghi tổng thể tích NaOH đã dùng là $V_1$ (mL).
+  \item Rửa thành cốc bằng bình tia và thêm 3--5 giọt phenolphtalein.
+  \item Chuẩn độ lượng NaOH dư bằng dung dịch H$_2$SO$_4$ 0,1 N đến khi màu hồng vừa mất; ghi thể tích H$_2$SO$_4$ đã dùng là $V_2$ (mL).
+\end{itemize}
+
+\subsubsection{Tính toán kết quả}
+Hàm lượng P$_2$O$_5$ hữu hiệu, tính theo phần trăm khối lượng, được xác định theo công thức:
+\[
+  \%P_2O_5 = \frac{(V_1-V_2) \times 0{,}000309 \times 250}{m \times 50} \times 100
+\]
+
+Trong đó:
+\begin{itemize}
+  \item $V_1$ là thể tích NaOH 0,1 N dùng để hòa tan kết tủa của mẫu thử (mL);
+  \item $V_2$ là thể tích H$_2$SO$_4$ 0,1 N dùng để chuẩn độ lượng kiềm dư (mL);
+  \item $0{,}000309$ là lượng P$_2$O$_5$ tương ứng với 1 mL NaOH 0,1 N (g);
+  \item $m$ là khối lượng mẫu cân (g).
+\end{itemize}
+
+\subsubsection{Kết quả và nhận xét}
+Số liệu chuẩn độ và kết quả tính hàm lượng P$_2$O$_5$ hữu hiệu được tổng hợp theo Bảng~\ref{tab:ket-qua-lan}.
+
+\begin{landscape}
+\begin{center}
+{\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{longtable}{|>{\centering\arraybackslash}p{0.12\linewidth}|>{\centering\arraybackslash}p{0.10\linewidth}|>{\centering\arraybackslash}p{0.08\linewidth}|>{\centering\arraybackslash}p{0.11\linewidth}|>{\centering\arraybackslash}p{0.11\linewidth}|>{\centering\arraybackslash}p{0.12\linewidth}|>{\centering\arraybackslash}p{0.13\linewidth}|>{\centering\arraybackslash}p{0.13\linewidth}|}
+\caption{Bảng ghi nhận kết quả xác định P$_2$O$_5$ hữu hiệu}\label{tab:ket-qua-lan} \\
+\hline
+\textbf{Ngày} & \textbf{KHM} & \textbf{Lần lặp} & \textbf{$V_{\mathrm{NaOH}}$ (mL)} & \textbf{$V_{\mathrm{H_2SO_4}}$ (mL)} & \textbf{$m$ (g)} & \textbf{Kết quả (\%P$_2$O$_5$)} & \textbf{KQTB (\%)} \\
+\hline
+\endfirsthead
+\multicolumn{8}{c}{\tablename\ \thetable{} -- tiếp theo} \\
+\hline
+\textbf{Ngày} & \textbf{KHM} & \textbf{Lần lặp} & \textbf{$V_{\mathrm{NaOH}}$ (mL)} & \textbf{$V_{\mathrm{H_2SO_4}}$ (mL)} & \textbf{$m$ (g)} & \textbf{Kết quả (\%P$_2$O$_5$)} & \textbf{KQTB (\%)} \\
+\hline
+\endhead
+\hline
+\multicolumn{8}{r}{\textit{Còn tiếp trang sau}} \\
+\endfoot
+\hline
+\endlastfoot
+\multirow{2}{*}{01/07/2026} & \multirow{2}{*}{501X1} & Lần 1 & 85 & 5,4 & 2,0128 & 12,21 & \multirow{2}{*}{12,21} \\
+\cline{3-7} & & Lần 2 & 85 & 5,9 & 2,0005 & 12,21 & \\
+\hline
+\multirow{2}{*}{02/07/2026} & \multirow{2}{*}{03DGX1} & Lần 1 & 110 & 2,6 & 2,0074 & 16,52 & \multirow{2}{*}{16,45} \\
+\cline{3-7} & & Lần 2 & 110 & 3,9 & 1,9994 & 16,38 & \\
+\hline
+\multirow{2}{*}{03/07/2026} & \multirow{2}{*}{603X1} & Lần 1 & 40 & 9,6 & 2,0008 & 4,69 & \multirow{2}{*}{4,66} \\
+\cline{3-7} & & Lần 2 & 40 & 8,5 & 2,1028 & 4,63 & \\
+\hline
+\multirow{2}{*}{03/07/2026} & \multirow{2}{*}{401X2} & Lần 1 & 60 & 5,4 & 2,0047 & 8,41 & \multirow{2}{*}{8,47} \\
+\cline{3-7} & & Lần 2 & 60 & 4,6 & 2,0034 & 8,53 & \\
+\hline
+\multirow{2}{*}{03/07/2026} & \multirow{2}{*}{400X1} & Lần 1 & 30 & 6,3 & 2,0128 & 3,63 & \multirow{2}{*}{3,57} \\
+\cline{3-7} & & Lần 2 & 30 & 7,2 & 2,0045 & 3,52 & \\
+\hline
+\multirow{2}{*}{03/07/2026} & \multirow{2}{*}{300X1} & Lần 1 & 50 & 11,5 & 2,0128 & 5,91 & \multirow{2}{*}{5,98} \\
+\cline{3-7} & & Lần 2 & 50 & 10,8 & 2,0008 & 6,05 & \\
+\hline
+\multirow{2}{*}{03/07/2026} & \multirow{2}{*}{403X1} & Lần 1 & 40 & 12,4 & 2,0074 & 4,24 & \multirow{2}{*}{4,31} \\
+\cline{3-7} & & Lần 2 & 40 & 11,5 & 2,0047 & 4,38 & \\
+\hline
+\multirow{2}{*}{04/07/2026} & \multirow{2}{*}{401X1} & Lần 1 & 70 & 8,7 & 2,0129 & 9,40 & \multirow{2}{*}{9,40} \\
+\cline{3-7} & & Lần 2 & 70 & 6,0 & 2,1028 & 9,40 & \\
+\hline
+\multirow{2}{*}{04/07/2026} & \multirow{2}{*}{03DGX1} & Lần 1 & 110 & 4,2 & 2,0005 & 16,33 & \multirow{2}{*}{16,25} \\
+\cline{3-7} & & Lần 2 & 110 & 5,3 & 1,9987 & 16,18 & \\
+\hline
+\multirow{2}{*}{06/07/2026} & \multirow{2}{*}{12X1} & Lần 1 & 40 & 6,3 & 2,0156 & 5,16 & \multirow{2}{*}{5,04} \\
+\cline{3-7} & & Lần 2 & 40 & 8,1 & 1,9994 & 4,92 & \\
+\hline
+\pagebreak
+\multirow{2}{*}{08/07/2026} & \multirow{2}{*}{05X1} & Lần 1 & 70 & 6,2 & 2,0008 & 9,84 & \multirow{2}{*}{9,84} \\
+\cline{3-7} & & Lần 2 & 70 & 6,0 & 2,0072 & 9,84 & \\
+\hline
+\multirow{2}{*}{11/07/2026} & \multirow{2}{*}{03DGX1} & Lần 1 & 110 & 2,7 & 1,9983 & 16,58 & \multirow{2}{*}{16,52} \\
+\cline{3-7} & & Lần 2 & 110 & 2,8 & 2,0128 & 16,45 & \\
+\hline
+\multirow{2}{*}{13/07/2026} & \multirow{2}{*}{03DGX1} & Lần 1 & 110 & 1,3 & 2,1028 & 16,71 & \multirow{2}{*}{16,19} \\
+\cline{3-7} & & Lần 2 & 110 & 5,8 & 2,1028 & 16,04 & \\
+\hline
+\multirow{2}{*}{14/07/2026} & \multirow{2}{*}{403X1} & Lần 1 & 30 & 6,1 & 2,0005 & 3,68 & \multirow{2}{*}{3,68} \\
+\cline{3-7} & & Lần 2 & 30 & 6,1 & 2,0074 & 3,68 & \\
+\hline
+\multirow{2}{*}{14/07/2026} & \multirow{2}{*}{402X1} & Lần 1 & 40 & 7,8 & 2,0258 & 4,90 & \multirow{2}{*}{4,84} \\
+\cline{3-7} & & Lần 2 & 40 & 8,9 & 2,0147 & 4,77 & \\
+\hline
+\multirow{2}{*}{23/07/2026} & \multirow{2}{*}{03LCX1} & Lần 1 & 100 & 3,3 & 1,9994 & 14,94 & \multirow{2}{*}{15,09} \\
+\cline{3-7} & & Lần 2 & 100 & 1,2 & 2,0005 & 15,24 & \\
+\hline
+\multirow{2}{*}{25/07/2026} & \multirow{2}{*}{03LCX1} & Lần 1 & 40 & 8,7 & 2,0129 & 4,80 & \multirow{2}{*}{4,75} \\
+\cline{3-7} & & Lần 2 & 40 & 9,6 & 2,0008 & 4,70 & \\
+\hline
+\multirow{2}{*}{27/07/2026} & \multirow{2}{*}{408X3} & Lần 1 & 30 & 11,2 & 2,0128 & 2,88 & \multirow{2}{*}{3,03} \\
+\cline{3-7} & & Lần 2 & 30 & 9,4 & 2,0003 & 3,18 & \\
+\hline
+\multirow{2}{*}{03/06/2026} & \multirow{2}{*}{603X1} & Lần 1 & 30 & 6,9 & 2,0012 & 3,57 & \multirow{2}{*}{3,54} \\
+\cline{3-7} & & Lần 2 & 30 & 7,1 & 2,0193 & 3,50 & \\
+\hline
+\multirow{2}{*}{03/06/2026} & \multirow{2}{*}{401X2} & Lần 1 & 65 & 6,8 & 2,0152 & 8,91 & \multirow{2}{*}{8,77} \\
+\cline{3-7} & & Lần 2 & 65 & 8,4 & 2,0256 & 8,63 & \\
+\hline
+\multirow{2}{*}{03/06/2026} & \multirow{2}{*}{501X1} & Lần 1 & 85 & 4,8 & 2,0049 & 12,35 & \multirow{2}{*}{12,29} \\
+\cline{3-7} & & Lần 2 & 85 & 5,2 & 2,0167 & 12,22 & \\
+\hline
+\pagebreak
+\multirow{2}{*}{03/06/2026} & \multirow{2}{*}{05X1} & Lần 1 & 70 & 2,0 & 2,0012 & 10,49 & \multirow{2}{*}{10,57} \\
+\cline{3-7} & & Lần 2 & 70 & 1,1 & 1,9970 & 10,64 & \\
+\hline
+\multirow{2}{*}{03/06/2026} & \multirow{2}{*}{12X1} & Lần 1 & 40 & 4,8 & 2,0140 & 5,39 & \multirow{2}{*}{5,36} \\
+\cline{3-7} & & Lần 2 & 40 & 5,5 & 2,0005 & 5,33 & \\
+\hline
+\multirow{2}{*}{03/06/2026} & \multirow{2}{*}{401X1} & Lần 1 & 70 & 8,7 & 2,0015 & 9,45 & \multirow{2}{*}{9,39} \\
+\cline{3-7} & & Lần 2 & 70 & 9,4 & 2,0056 & 9,33 & \\
+\hline
+\multirow{2}{*}{03/06/2026} & \multirow{2}{*}{12X1} & Lần 1 & 40 & 5,5 & 2,0012 & 5,32 & \multirow{2}{*}{5,44} \\
+\cline{3-7} & & Lần 2 & 40 & 3,3 & 2,0356 & 5,56 & \\
+\hline
+\multirow{2}{*}{05/06/2026} & \multirow{2}{*}{400X1} & Lần 1 & 30 & 6,8 & 2,0009 & 3,58 & \multirow{2}{*}{3,51} \\
+\cline{3-7} & & Lần 2 & 30 & 7,5 & 2,0194 & 3,44 & \\
+\hline
+\multirow{2}{*}{05/06/2026} & \multirow{2}{*}{403X1} & Lần 1 & 30 & 1,2 & 2,1204 & 4,19 & \multirow{2}{*}{4,26} \\
+\cline{3-7} & & Lần 2 & 30 & 1,9 & 2,0014 & 4,33 & \\
+\hline
+\multirow{2}{*}{05/06/2026} & \multirow{2}{*}{300X1} & Lần 1 & 50 & 9,5 & 2,0013 & 6,25 & \multirow{2}{*}{6,18} \\
+\cline{3-7} & & Lần 2 & 50 & 10,3 & 2,0067 & 6,11 & \\
+\hline
+\multirow{2}{*}{05/06/2026} & \multirow{2}{*}{402X1} & Lần 1 & 40 & 8,3 & 2,0124 & 4,87 & \multirow{2}{*}{5,02} \\
+\cline{3-7} & & Lần 2 & 40 & 6,0 & 2,0284 & 5,17 & \\
+\hline
+\multirow{2}{*}{04/06/2026} & \multirow{2}{*}{03DGX1} & Lần 1 & 110 & 5,2 & 2,0045 & 16,14 & \multirow{2}{*}{16,08} \\
+\cline{3-7} & & Lần 2 & 110 & 5,2 & 2,0193 & 16,02 & \\
+\hline
+\multirow{2}{*}{15/06/2026} & \multirow{2}{*}{03DGX1} & Lần 1 & 110 & 2,3 & 2,0012 & 16,62 & \multirow{2}{*}{16,56} \\
+\cline{3-7} & & Lần 2 & 110 & 1,8 & 2,0248 & 16,49 & \\
+\hline
+\multirow{2}{*}{24/06/2026} & \multirow{2}{*}{03DGX1} & Lần 1 & 110 & 4,2 & 1,9997 & 16,33 & \multirow{2}{*}{16,50} \\
+\cline{3-7} & & Lần 2 & 110 & 2,0 & 2,0004 & 16,66 & \\
+\hline
+\end{longtable}
+}
+\end{center}
+\end{landscape}
+
+\noindent\textbf{Nhận xét:} Điểm kết thúc chuẩn độ được nhận biết khi màu hồng của phenolphtalein vừa mất. Kết quả chỉ đáng tin cậy khi kết tủa được tạo thành, lọc và rửa hoàn toàn; thể tích chuẩn độ của các mẫu lặp cần có độ chênh lệch nằm trong giới hạn kiểm soát nội bộ trước khi so sánh \%P$_2$O$_5$ với chỉ tiêu công bố.
+
 
 \subsection{Xác định carbon tổng}
-Carbon tổng có thể được xác định bằng phương pháp đốt khô ở nhiệt độ cao. Mẫu đã đồng nhất được đưa vào thiết bị phân tích nguyên tố hoặc thiết bị xác định carbon; carbon trong mẫu được oxy hóa thành CO$_2$ và lượng CO$_2$ sinh ra được đo để tính hàm lượng carbon. Phương pháp này phù hợp khi cần đánh giá carbon tổng của mẫu, bao gồm cả carbon hữu cơ và carbon vô cơ nếu có \cite{company-internal-document}.
+\subsubsection{Nguyên tắc}
 
-Đối với các sản phẩm hữu cơ, một số phòng thí nghiệm có thể áp dụng phương pháp oxy hóa ướt dicromat để xác định carbon hữu cơ. Cần phân biệt rõ carbon hữu cơ với carbon tổng trong biểu mẫu và báo cáo kết quả, vì hai chỉ tiêu có phạm vi đo khác nhau. Phương pháp sử dụng và cách biểu thị kết quả phải tuân theo chỉ tiêu kỹ thuật của từng sản phẩm và SOP hiện hành của công ty.
+Phương pháp Walkley--Black được dùng để xác định hàm lượng carbon hữu cơ trong đất hoặc vật liệu hữu cơ bằng phương pháp oxy hóa ướt. 
+Nguyên tắc chính là dùng kali dicromat (K$_2$Cr$_2$O$_7$) dư trong môi trường H$_2$SO$_4$ đậm đặc để oxy hóa carbon hữu cơ trong mẫu.
+
+\noindent\textbf{a. Oxy hóa carbon hữu cơ}
+
+Khi cho K$_2$Cr$_2$O$_7$ và H$_2$SO$_4$ đậm đặc vào mẫu, carbon hữu cơ bị oxy hóa thành CO$_2$, còn crom(VI) trong ion Cr$_2$O$_7^{2-}$ bị khử thành Cr$^{3+}$.
+
+Có thể biểu diễn tổng quát:
+\[
+  3\mathrm{C} + 2\mathrm{Cr_2O_7^{2-}} + 16\mathrm{H^+}
+  \longrightarrow 3\mathrm{CO_2} + 4\mathrm{Cr^{3+}} + 8\mathrm{H_2O}
+\]
+
+Hay xét riêng bán phản ứng của dicromat:
+\[
+  \mathrm{Cr_2O_7^{2-}} + 14\mathrm{H^+} + 6e^-
+  \longrightarrow 2\mathrm{Cr^{3+}} + 7\mathrm{H_2O}
+\]
+
+Trong đó, lượng Cr$_2$O$_7^{2-}$ bị tiêu hao tỷ lệ với lượng carbon hữu cơ bị oxy hóa.
+
+\noindent\textbf{b. Chuẩn độ lượng dicromat còn dư}
+
+Sau khi phản ứng oxy hóa hoàn tất, lượng K$_2$Cr$_2$O$_7$ còn dư được xác định bằng chuẩn độ ngược với dung dịch Fe$^{2+}$.
+
+Phản ứng chuẩn độ:
+\[
+  \mathrm{Cr_2O_7^{2-}} + 6\mathrm{Fe^{2+}} + 14\mathrm{H^+}
+  \longrightarrow 2\mathrm{Cr^{3+}} + 6\mathrm{Fe^{3+}} + 7\mathrm{H_2O}
+\]
+
+Tiến hành đồng thời một mẫu trắng không chứa mẫu phân tích.
+\begin{itemize}
+  \item Mẫu trắng cho biết tổng lượng K$_2$Cr$_2$O$_7$ ban đầu.
+  \item Mẫu kiểm định cho biết lượng K$_2$Cr$_2$O$_7$ còn dư sau khi oxy hóa carbon.
+\end{itemize}
+
+Do đó:
+\[
+  \boxed{\text{Dicromat đã phản ứng} = \text{Dicromat mẫu trắng} - \text{Dicromat mẫu kiểm định}}
+\]
+
+Từ lượng dicromat đã tiêu hao có thể tính được lượng carbon hữu cơ trong mẫu.
+
+\noindent\textbf{c. Nhận biết điểm kết thúc}
+
+Chất chỉ thị được sử dụng là ferroin, một phức chất của Fe$^{2+}$ với phenanthrolin.
+
+Khi chuẩn độ bằng dung dịch Fe$^{2+}$, đến điểm tương đương toàn bộ Cr$_2$O$_7^{2-}$ dư đã bị khử. 
+Một lượng rất nhỏ Fe$^{2+}$ dư làm chỉ thị chuyển màu, từ đó xác định điểm kết thúc chuẩn độ.
+
+\noindent\textbf{d. Điểm đặc biệt của Walkley--Black}
+
+Phương pháp Walkley--Black không oxy hóa hoàn toàn 100\% carbon hữu cơ trong mọi loại mẫu. 
+Phương pháp cổ điển thường giả định khoảng 75\% carbon hữu cơ được oxy hóa, vì vậy thường sử dụng hệ số hiệu chỉnh:
+\[
+  \frac{100}{75} \approx 1{,}33
+\]
+
+\subsubsection{Hóa chất, thiết bị và dụng cụ}
+\noindent\textbf{Hóa chất và thuốc thử}
+\begin{itemize}
+  \item Axit sulfuric đậm đặc, H$_2$SO$_4$ ($d = 1{,}84$).
+  \item Axit phosphoric, H$_3$PO$_4$ 85\%.
+  \item Kali dicromat, K$_2$Cr$_2$O$_7$.
+  \item Muối Mohr, [FeSO$_4$(NH$_4$)$_2$SO$_4\cdot6$H$_2$O].
+  \item Sắt(II) sulfat heptahydrat, FeSO$_4\cdot7$H$_2$O
+  \item O-phenanthrolin monohydrat, C$_{12}$H$_8$N$_2\cdot$H$_2$O
+\end{itemize}
+
+\noindent\textbf{Thiết bị và dụng cụ}
+\begin{itemize}
+  \item Dụng cụ thông thường của phòng thí nghiệm.
+  \item Cân phân tích có độ chính xác đến $\pm0{,}0001$ g.
+  \item Tủ sấy có nhiệt độ làm việc đến $200\,^{\circ}\mathrm{C}$ và độ chính xác $\pm2\,^{\circ}\mathrm{C}$.
+  \item Rây có đường kính lỗ 0,2 mm.
+  \item Buret, dung tích 50 mL và độ chính xác 0,1 mL.
+\end{itemize}
+
+\subsubsection{Cách tiến hành}
+
+\noindent\textbf{a. Chuẩn bị thuốc thử}
+\begin{itemize}
+  \item \textbf{Dung dịch tiêu chuẩn K$_2$Cr$_2$O$_7$ M/6:} Cân 49,040 g K$_2$Cr$_2$O$_7$ đã sấy khô ở $105\,^{\circ}\mathrm{C}$ trong 2 giờ và để nguội trong bình hút ẩm. Cho hóa chất vào cốc dung tích 1000 mL, thêm khoảng 400 mL nước cất, khuấy đến tan hoàn toàn. Chuyển định lượng vào bình định mức 1000 mL, thêm nước cất đến vạch, lắc đều và bảo quản kín ở $20\,^{\circ}\mathrm{C}$.
+  \item \textbf{Dung dịch muối Mohr khoảng 0,5 M:} Cân 196 g FeSO$_4$(NH$_4$)$_2$SO$_4\cdot6$H$_2$O vào cốc dung tích 1000 mL. Thêm 50 mL H$_2$SO$_4$ đậm đặc và 450 mL nước cất, khuấy đến khi muối tan hoàn toàn. Chuyển dung dịch vào bình định mức 1000 mL, thêm nước cất đến vạch và lắc đều. Để dung dịch lắng trong; nếu dung dịch bị đục thì lọc. Bảo quản dung dịch kín trong chai thủy tinh màu nâu ở $20\,^{\circ}\mathrm{C}$ và hạn chế sự xâm nhập của không khí.
+  \item \textbf{Dung dịch chỉ thị màu ferroin (o-phenanthrolin):} Cân 0,695 g sắt(II) sulfat heptahydrat, FeSO$_4\cdot7$H$_2$O, và 1,485 g o-phenanthrolin monohydrat, C$_{12}$H$_8$N$_2\cdot$H$_2$O. Hòa tan đồng thời hai chất trong 100 mL nước cất, lắc đều đến khi dung dịch trong suốt; bảo quản trong chai màu nâu.
+\end{itemize}
+
+\noindent\textbf{b. Chuẩn bị mẫu}
+\begin{itemize}
+  \item Trộn đều mẫu phân bón.
+  \item Nghiền mịn mẫu.
+  \item Rây mẫu qua rây có đường kính lỗ 0,2 mm.
+  \item Trộn đều phần mẫu đã rây để sử dụng cho phân tích.
+\end{itemize}
+
+\noindent\textbf{c. Oxy hóa carbon hữu cơ}
+\begin{itemize}
+  \item Cân chính xác khoảng 0,1--0,2 g mẫu vào bình tam giác chịu nhiệt dung tích 250 mL.
+  \item Thêm chính xác 20,0 mL dung dịch tiêu chuẩn K$_2$Cr$_2$O$_7$ M/6 vào bình.
+  \item Thêm nhanh 40 mL H$_2$SO$_4$ đậm đặc.
+  \item Lắc nhẹ bình để trộn đều dung dịch.
+  \item Đặt bình trên tấm cách nhiệt và để yên trong 60 phút.
+  \item Kiểm tra màu dung dịch sau oxy hóa; nếu dung dịch có màu xanh, thực hiện lại phép thử với lượng mẫu nhỏ hơn hoặc tăng lượng dung dịch K$_2$Cr$_2$O$_7$.
+\end{itemize}
+
+\noindent\textbf{d. Chuẩn bị mẫu trắng và xử lý sau oxy hóa}
+\begin{itemize}
+  \item Chuẩn bị đồng thời hai mẫu trắng theo cùng quy trình nhưng không thêm mẫu phân bón.
+  \item Thêm 100 mL nước cất vào từng bình sau thời gian oxy hóa.
+  \item Thêm 10 mL H$_3$PO$_4$ 85\% vào từng bình.
+  \item Để dung dịch nguội đến nhiệt độ phòng trước khi chuẩn độ.
+\end{itemize}
+
+\noindent\textbf{e. Chuẩn độ}
+\begin{itemize}
+  \item Thêm 0,5 mL dung dịch chỉ thị ferroin vào mẫu trắng và mẫu thử.
+  \item Chuẩn độ lượng K$_2$Cr$_2$O$_7$ dư bằng dung dịch muối Mohr khoảng 0,5 M.
+  \item Nhỏ từ từ từng giọt dung dịch muối Mohr khi gần đến điểm kết thúc và lắc đều bình.
+  \item Dừng chuẩn độ khi dung dịch chuyển màu đột ngột từ xanh sang đỏ thẫm.
+  \item Ghi thể tích dung dịch muối Mohr đã sử dụng cho mẫu trắng và mẫu thử.
+\end{itemize}
+
+\subsubsection{Tính toán kết quả}
+Hàm lượng carbon hữu cơ, tính theo phần trăm khối lượng, được xác định theo công thức:
+\[
+  \%OC = \frac{(a-b) \times N_{\mathrm{Mohr}} \times 0{,}003 \times 100}{m} \times \frac{100}{75}
+\]
+
+Hàm lượng chất hữu cơ được quy đổi theo công thức:
+\[
+  \%OM = \%OC \times 2{,}2
+\]
+
+Trong đó:
+\begin{itemize}
+  \item $a$ là thể tích dung dịch muối Mohr dùng để chuẩn độ mẫu trắng (mL);
+  \item $b$ là thể tích dung dịch muối Mohr dùng để chuẩn độ mẫu thử (mL);
+  \item $N_{\mathrm{Mohr}}$ là nồng độ đương lượng của dung dịch muối Mohr (N);
+  \item $m$ là khối lượng mẫu cân (g);
+  \item $0{,}003$ là khối lượng carbon tương ứng với 1 mL dung dịch chuẩn 1 N (g);
+  \item $\frac{100}{75}$ là hệ số hiệu chỉnh do phương pháp oxy hóa khoảng 75\% carbon hữu cơ;
+  \item $2{,}2$ là hệ số quy đổi từ carbon hữu cơ sang chất hữu cơ.
+\end{itemize}
+
+\subsubsection{Kết quả và nhận xét}
+Kết quả xác định carbon hữu cơ và quy đổi chất hữu cơ được ghi nhận theo Bảng~\ref{tab:ket-qua-carbon}.
+
+\begin{landscape}
+\begin{center}
+{\scriptsize
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{|>{\centering\arraybackslash}p{0.09\linewidth}|>{\centering\arraybackslash}p{0.08\linewidth}|>{\centering\arraybackslash}p{0.07\linewidth}|>{\centering\arraybackslash}p{0.11\linewidth}|>{\centering\arraybackslash}p{0.11\linewidth}|>{\centering\arraybackslash}p{0.10\linewidth}|>{\centering\arraybackslash}p{0.11\linewidth}|>{\centering\arraybackslash}p{0.07\linewidth}|>{\centering\arraybackslash}p{0.08\linewidth}|>{\centering\arraybackslash}p{0.08\linewidth}|}
+\caption{Bảng ghi nhận kết quả xác định carbon hữu cơ tổng số}\label{tab:ket-qua-carbon} \\
+\hline
+\textbf{Ngày} & \textbf{KHM} & \textbf{Lần lặp} & \textbf{$V_{\mathrm{trắng}}$ (mL)} & \textbf{$V_{\mathrm{thử}}$ (mL)} & \textbf{$V_{\mathrm{K_2Cr_2O_7}}$ (mL)} & \textbf{Khối lượng mẫu (g)} & \textbf{OC (\%)} & \textbf{Kết quả OM (\%)} & \textbf{KQTB (\%)} \\
+\hline
+\endfirsthead
+\multicolumn{10}{c}{\tablename\ \thetable{} -- tiếp theo} \\
+\hline
+\textbf{Ngày} & \textbf{KHM} & \textbf{Lần lặp} & \textbf{$V_{\mathrm{trắng}}$ (mL)} & \textbf{$V_{\mathrm{thử}}$ (mL)} & \textbf{$V_{\mathrm{K_2Cr_2O_7}}$ (mL)} & \textbf{Khối lượng mẫu (g)} & \textbf{OC (\%)} & \textbf{Kết quả OM (\%)} & \textbf{KQTB (\%)} \\
+\hline
+\endhead
+\hline
+\multicolumn{10}{r}{\textit{Còn tiếp trang sau}} \\
+\endfoot
+\hline
+\endlastfoot
+\multirow{2}{*}{03/06/2026} & \multirow{2}{*}{HClX2} & Lần 1 & 50 & 34,5 & 20 & 0,2811 & 8,82 & 19,41 & \multirow{2}{*}{19,11} \\
+\cline{3-9} & & Lần 2 & 50 & 38,4 & 20 & 0,2171 & 8,55 & 18,81 & \\
+\hline
+\multirow{2}{*}{03/06/2026} & \multirow{2}{*}{HClX2} & Lần 1 & 52,5 & 38,5 & 25 & 0,2678 & 9,96 & 21,91 & \multirow{2}{*}{23,35} \\
+\cline{3-9} & & Lần 2 & 52,5 & 36,2 & 25 & 0,2755 & 11,27 & 24,79 & \\
+\hline
+\multirow{2}{*}{06/2026} & \multirow{2}{*}{MHCX2} & Lần 1 & 66,3 & 55,7 & 25 & 0,2029 & 7,88 & 17,34 & \multirow{2}{*}{17,17} \\
+\cline{3-9} & & Lần 2 & 66,3 & 55,4 & 25 & 0,2126 & 7,73 & 17,01 & \\
+\hline
+\multirow{2}{*}{15/07/2026} & \multirow{2}{*}{HClX2} & Lần 1 & 49,7 & 38,2 & 25 & 0,2627 & 8,81 & 19,38 & \multirow{2}{*}{19,02} \\
+\cline{3-9} & & Lần 2 & 49,7 & 40,8 & 25 & 0,2112 & 8,48 & 18,65 & \\
+\hline
+\multirow{2}{*}{22/07/2026} & \multirow{2}{*}{HClX2} & Lần 1 & 50,4 & 37,1 & 25 & 0,3025 & 8,72 & 19,19 & \multirow{2}{*}{19,48} \\
+\cline{3-9} & & Lần 2 & 50,4 & 38,9 & 25 & 0,2534 & 8,98 & 19,76 & \\
+\hline
+\end{longtable}
+}
+\end{center}
+\end{landscape}
+
+\noindent\textbf{Nhận xét:} Mẫu trắng là cơ sở để kiểm tra lượng K$_2$Cr$_2$O$_7$ dư, vì vậy thể tích muối Mohr của mẫu trắng phải được xác định đồng thời với mẫu thử. Sau oxy hóa, dung dịch không được có màu xanh; trường hợp này cho thấy lượng chất oxy hóa không đủ và phép thử cần được thực hiện lại. Giá trị \%OC và \%OM sau tính toán được dùng để đánh giá mức độ phù hợp của sản phẩm hữu cơ hoặc hữu cơ-khoáng.
 
 \subsection{Xác định độ ẩm}
-Độ ẩm thường được xác định bằng phương pháp khối lượng, sử dụng tủ sấy. Chén cân được sấy và làm nguội trong bình hút ẩm trước khi cân khối lượng ban đầu. Một lượng mẫu xác định được cân vào chén, sấy ở nhiệt độ và thời gian theo quy trình áp dụng, sau đó làm nguội trong bình hút ẩm và cân lại. Quá trình sấy--làm nguội--cân được lặp lại đến khi khối lượng không đổi; chênh lệch khối lượng trước và sau sấy được dùng để tính phần trăm độ ẩm \cite{company-internal-document,qcvn-fertilizer-quality}.
+\subsubsection{Nguyên tắc}
+Độ ẩm của mẫu được xác định bằng phương pháp khối lượng, dựa trên sự giảm khối lượng của mẫu sau khi sấy ở nhiệt độ quy định đến khi đạt khối lượng không đổi. 
+Phần khối lượng mất đi trong quá trình sấy được xem chủ yếu là lượng nước có trong mẫu.
 
-Trong phép thử này, thao tác làm nguội trong bình hút ẩm giúp hạn chế mẫu hút ẩm trở lại trước khi cân. Nhiệt độ sấy cần được lựa chọn phù hợp với nền mẫu để giảm nguy cơ làm mất các chất dễ bay hơi khác ngoài nước, từ đó bảo đảm kết quả phản ánh đúng chỉ tiêu độ ẩm của sản phẩm.
+Quá trình được thực hiện bằng cách cân một lượng mẫu xác định, sau đó sấy trong tủ sấy ở nhiệt độ thích hợp. 
+Sau khi sấy, mẫu được làm nguội trong bình hút ẩm rồi cân lại. 
+Việc sấy và cân được lặp lại cho đến khi chênh lệch giữa hai lần cân liên tiếp không đáng kể.
+
+\subsubsection{Hóa chất, thiết bị và dụng cụ}
+\noindent\textbf{Hóa chất và thuốc thử}
+\begin{itemize}
+  \item Không sử dụng thuốc thử trong phép xác định độ ẩm.
+  \item Nước cất được sử dụng khi cần vệ sinh dụng cụ.
+\end{itemize}
+
+\noindent\textbf{Thiết bị và dụng cụ}
+\begin{itemize}
+  \item Dụng cụ thông thường của phòng thí nghiệm.
+  \item Cân phân tích có độ chính xác đến $\pm0{,}0001$ g.
+  \item Tủ sấy có thông gió, điều chỉnh được từ $50$ đến $200\,^{\circ}\mathrm{C}$ với độ chính xác $\pm2\,^{\circ}\mathrm{C}$.
+  \item Chén cân bằng thủy tinh hoặc nhôm, có nắp đậy và dung tích khoảng 30 mL.
+  \item Bình hút ẩm.
+\end{itemize}
+
+\subsubsection{Cách tiến hành}
+\noindent\textbf{a. Chọn nhiệt độ sấy}
+\begin{itemize}
+  \item Sấy ở $50$--$60\,^{\circ}\mathrm{C}$ đối với phân bón kém bền nhiệt có chứa nitơ.
+  \item Sấy ở $70\,^{\circ}\mathrm{C}$ đối với phân hữu cơ khoáng, phân hữu cơ sinh học hoặc phân hữu cơ vi sinh.
+  \item Sấy ở $105\,^{\circ}\mathrm{C}$ đối với phân bón bền nhiệt như tecmophotphat hoặc supephotphat.
+\end{itemize}
+
+\noindent\textbf{b. Chuẩn bị chén cân}
+\begin{itemize}
+  \item Sấy chén cân ở $105\,^{\circ}\mathrm{C}$ trong 1 giờ.
+  \item Chuyển chén cân vào bình hút ẩm và để nguội đến nhiệt độ phòng.
+  \item Cân và ghi khối lượng chén cân là $m_c$.
+\end{itemize}
+
+\noindent\textbf{c. Cân mẫu trước khi sấy}
+\begin{itemize}
+  \item Cân khoảng 5--10 g mẫu vào chén cân đã biết khối lượng.
+  \item Đậy nắp chén cân.
+  \item Cân và ghi khối lượng chén có mẫu trước khi sấy là $(m_c+m_m)_{\mathrm{ts}}$.
+\end{itemize}
+
+\noindent\textbf{d. Sấy mẫu và cân đến khối lượng không đổi}
+\begin{itemize}
+  \item Mở nắp chén cân.
+  \item Đặt chén cân chứa mẫu vào tủ sấy ở nhiệt độ đã chọn.
+  \item Sấy mẫu trong 2--4 giờ.
+  \item Đậy nắp chén cân sau khi kết thúc thời gian sấy.
+  \item Chuyển chén cân vào bình hút ẩm và để nguội đến nhiệt độ phòng.
+  \item Cân và ghi khối lượng chén có mẫu sau sấy là $(m_c+m_m)_{\mathrm{ss}}$.
+  \item Lặp lại chu trình sấy, làm nguội và cân sau mỗi 30--60 phút.
+  \item Kết thúc khi khối lượng mẫu không đổi.
+\end{itemize}
+
+\subsubsection{Tính toán kết quả}
+Độ ẩm của mẫu phân bón, tính theo phần trăm khối lượng, được xác định theo công thức:
+\[
+  A\% = \frac{(m_c+m_m)_{\mathrm{ts}}-(m_c+m_m)_{\mathrm{ss}}}{(m_c+m_m)_{\mathrm{ts}}-m_c} \times 100
+\]
+
+Trong đó:
+\begin{itemize}
+  \item $m_c$ là khối lượng chén sau khi đã sấy ở nhiệt độ $105\,^{\circ}\mathrm{C}$, tính bằng gam;
+  \item $(m_c+m_m)_{\mathrm{ts}}$ là khối lượng của mẫu và chén trước khi sấy, tính bằng gam;
+  \item $(m_c+m_m)_{\mathrm{ss}}$ là khối lượng của mẫu và chén sau khi sấy, tính bằng gam.
+\end{itemize}
+
+\subsubsection{Kết quả và nhận xét}
+Kết quả cân trước và sau sấy được ghi nhận theo Bảng~\ref{tab:ket-qua-do-am}. Cần ghi khối lượng sau mỗi chu kỳ sấy để chứng minh mẫu đã đạt khối lượng không đổi.
+
+\begin{table}[H]
+  \centering
+  \small
+  \renewcommand{\arraystretch}{1.3}
+  \caption{Bảng ghi nhận kết quả xác định độ ẩm}
+  \label{tab:ket-qua-do-am}
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{|p{0.14\textwidth}|>{\centering\arraybackslash}p{0.11\textwidth}|>{\centering\arraybackslash}p{0.14\textwidth}|>{\centering\arraybackslash}p{0.14\textwidth}|>{\centering\arraybackslash}p{0.14\textwidth}|>{\centering\arraybackslash}p{0.12\textwidth}|>{\centering\arraybackslash}p{0.11\textwidth}|}
+    \hline
+    \centering\textbf{Mã mẫu} & \textbf{Nhiệt độ sấy ($^{\circ}$C)} & \textbf{$m_c$ (g)} & \textbf{$(m_c+m_m)_{\mathrm{ts}}$ (g)} & \textbf{$(m_c+m_m)_{\mathrm{ss}}$ (g)} & \textbf{\%H$_2$O} & \textbf{Đánh giá} \\
+    \hline
+    & & & & & & \\
+    \hline
+    & & & & & & \\
+    \hline
+  \end{tabular}
+  }
+\end{table}
+
+\noindent\textbf{Nhận xét:} Khối lượng mẫu sau các chu kỳ sấy liên tiếp cần ổn định trước khi tính độ ẩm. Nhiệt độ sấy phải được lựa chọn phù hợp với loại phân bón để hạn chế tổn thất các chất dễ bay hơi khác ngoài nước. Kết quả \%H$_2$O được so sánh với chỉ tiêu chất lượng hoặc quy định nội bộ áp dụng cho từng sản phẩm.
 
 \section{Hướng dẫn thực hiện theo ISO}
 Trong thời gian thực tập, việc thực hiện công việc theo ISO tập trung vào tuân thủ quy trình thao tác chuẩn, sử dụng biểu mẫu đúng quy định và bảo đảm khả năng truy xuất của kết quả kiểm nghiệm. Mỗi bước từ tiếp nhận mẫu, chuẩn bị mẫu, vận hành thiết bị, ghi nhận số liệu đến lưu hồ sơ cần được thực hiện đầy đủ, rõ ràng và có người chịu trách nhiệm \cite{company-internal-document}.
 
 Thực tập sinh được hướng dẫn kiểm tra tình trạng thiết bị trước khi sử dụng, tuân thủ các hướng dẫn vận hành, ghi chép số liệu gốc trung thực và không tự ý sửa đổi kết quả. Các hồ sơ, biểu mẫu và tài liệu kỹ thuật được lưu giữ có hệ thống để hỗ trợ việc kiểm tra, đối chiếu và truy xuất thông tin khi cần thiết. Việc tuân thủ các yêu cầu này góp phần duy trì tính nhất quán, độ tin cậy và chất lượng của hoạt động kiểm nghiệm \cite{company-internal-document}.
 
-\chapter{Work Performed}
-Use one section for each major task or project. Explain your responsibilities, decisions, implementation, and deliverables.
+\chapter{Tổng hợp, đánh giá và thảo luận kết quả kiểm nghiệm}
+Phần này được hoàn thiện sau khi nhập số liệu chính thức vào các bảng kết quả của từng phép thử. Việc tổng hợp giúp đánh giá đồng thời mức độ đáp ứng chỉ tiêu chất lượng, độ ổn định giữa các lần lặp và những yếu tố có thể ảnh hưởng đến độ tin cậy của kết quả.
 
-\section{Task or project 1: \placeholder{Title}}
-\subsection{Problem and requirements}
-\placeholder{Describe the problem and the requirements.}
+\section{Tổng hợp kết quả theo chỉ tiêu chất lượng}
+Các kết quả cuối cùng được so sánh với chỉ tiêu công bố hoặc tiêu chuẩn kỹ thuật áp dụng cho từng sản phẩm. Khi sử dụng bảng này, kết quả phân tích nên là giá trị trung bình của các lần lặp hợp lệ.
 
-\subsection{Approach}
-\placeholder{Describe your approach and justify important technical decisions.}
+\begin{table}[H]
+  \centering
+  \small
+  \renewcommand{\arraystretch}{1.3}
+  \caption{Bảng tổng hợp và đối chiếu kết quả kiểm nghiệm}
+  \label{tab:tong-hop-ket-qua-kiem-nghiem}
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{|p{0.15\textwidth}|p{0.14\textwidth}|>{\centering\arraybackslash}p{0.13\textwidth}|>{\centering\arraybackslash}p{0.13\textwidth}|>{\centering\arraybackslash}p{0.13\textwidth}|>{\centering\arraybackslash}p{0.14\textwidth}|>{\centering\arraybackslash}p{0.12\textwidth}|}
+    \hline
+    \centering\textbf{Mã mẫu / sản phẩm} & \centering\textbf{Chỉ tiêu} & \textbf{Chỉ tiêu công bố (\%)} & \textbf{Kết quả trung bình (\%)} & \textbf{Chênh lệch (điểm \%)} & \textbf{Mức chênh lệch tương đối (\%)} & \textbf{Đánh giá} \\
+    \hline
+    & Đạm tổng số & & & & & \\
+    \hline
+    & K$_2$O hữu hiệu & & & & & \\
+    \hline
+    & P$_2$O$_5$ hữu hiệu & & & & & \\
+    \hline
+    & Carbon hữu cơ / chất hữu cơ & & & & & \\
+    \hline
+    & Độ ẩm & & & & & \\
+    \hline
+  \end{tabular}
+  }
+\end{table}
 
-\subsection{Implementation and deliverables}
-\placeholder{Describe what you produced. Add figures, tables, code excerpts, or links where useful.}
+Chênh lệch giữa kết quả trung bình và chỉ tiêu công bố được xác định theo công thức:
+\[
+  \Delta = \bar{x} - x_{\mathrm{cb}}
+\]
+\[
+  \delta = \frac{\Delta}{x_{\mathrm{cb}}} \times 100
+\]
+Trong đó, $\bar{x}$ là kết quả trung bình của các lần lặp, $x_{\mathrm{cb}}$ là chỉ tiêu công bố, $\Delta$ là chênh lệch tuyệt đối và $\delta$ là chênh lệch tương đối.
 
-% Example figure; replace the filename when you have an image.
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics[width=0.8\textwidth]{figures/example.png}
-%   \caption{\placeholder{Description of the figure}.}
-%   \label{fig:example}
-% \end{figure}
+\noindent\textbf{Gợi ý viết nhận xét:} Nêu chỉ tiêu nào đạt hoặc không đạt so với mức công bố; chỉ ra chỉ tiêu có chênh lệch lớn nhất; đồng thời nhận xét liệu mức chênh lệch có phù hợp với giới hạn kiểm soát nội bộ và sai số của phương pháp hay không.
 
-\section{Task or project 2: \placeholder{Title}}
-\placeholder{Repeat the same structure for another substantial task.}
+\section{Đánh giá độ lặp lại của phép thử}
+Độ lặp lại được đánh giá từ các phép đo lặp trên cùng một mẫu. Giá trị trung bình, độ lệch chuẩn và độ lệch chuẩn tương đối giúp nhận biết mức độ phân tán của kết quả.
 
-\chapter{Results and Evaluation}
-\section{Technical results}
-Present measurable outcomes: performance, accuracy, quality, time saved, reliability, completed features, or other relevant metrics.
+\begin{table}[H]
+  \centering
+  \small
+  \renewcommand{\arraystretch}{1.3}
+  \caption{Bảng đánh giá độ lặp lại của kết quả kiểm nghiệm}
+  \label{tab:do-lap-lai-ket-qua}
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{|p{0.17\textwidth}|p{0.16\textwidth}|>{\centering\arraybackslash}p{0.11\textwidth}|>{\centering\arraybackslash}p{0.11\textwidth}|>{\centering\arraybackslash}p{0.11\textwidth}|>{\centering\arraybackslash}p{0.11\textwidth}|>{\centering\arraybackslash}p{0.11\textwidth}|>{\centering\arraybackslash}p{0.11\textwidth}|}
+    \hline
+    \centering\textbf{Mã mẫu} & \centering\textbf{Chỉ tiêu} & \textbf{Lần 1} & \textbf{Lần 2} & \textbf{Lần 3} & \textbf{Trung bình} & \textbf{RSD (\%)} & \textbf{Đánh giá} \\
+    \hline
+    & & & & & & & \\
+    \hline
+    & & & & & & & \\
+    \hline
+  \end{tabular}
+  }
+\end{table}
 
-\section{Validation and testing}
-Explain how the work was tested or reviewed and summarize the results.
+Độ lệch chuẩn tương đối được tính theo công thức:
+\[
+  \mathrm{RSD}(\%) = \frac{s}{\bar{x}} \times 100
+\]
+Trong đó, $s$ là độ lệch chuẩn của các lần đo lặp. Kết quả có RSD thấp cho thấy thao tác phân tích và thiết bị đo có độ ổn định tốt; nếu RSD cao, cần xem xét lại thao tác lấy mẫu, cân mẫu, pha dung dịch, nhận biết điểm kết thúc chuẩn độ hoặc điều kiện vận hành thiết bị.
 
-\section{Contribution to the organization}
-Describe the practical value of your work for the host organization.
+\section{Thảo luận kết quả}
+Khi hoàn thiện số liệu, phần thảo luận nên được trình bày theo các nội dung sau:
+\begin{itemize}
+  \item So sánh kết quả từng chỉ tiêu với thành phần dinh dưỡng công bố trên nhãn hoặc tiêu chuẩn kỹ thuật của sản phẩm.
+  \item Nhận xét sự khác biệt giữa các mẫu hoặc các lô sản xuất, nếu có nhiều hơn một mẫu được kiểm nghiệm.
+  \item Đối với kali hữu hiệu, nêu phương trình đường chuẩn, hệ số $R^2$ và xác nhận nồng độ dung dịch mẫu nằm trong khoảng tuyến tính của đường chuẩn.
+  \item Đối với các phương pháp chuẩn độ, nhận xét độ ổn định của thể tích chuẩn độ giữa các lần lặp và sự rõ ràng của điểm kết thúc.
+  \item Đối với độ ẩm, xác nhận mẫu đã được sấy đến khối lượng không đổi và nhiệt độ sấy phù hợp với loại phân bón.
+  \item Chỉ ra các nguyên nhân kỹ thuật có thể làm kết quả sai lệch, chẳng hạn mẫu không đồng nhất, sai số cân, pha loãng không chính xác, thuốc thử suy giảm chất lượng hoặc thiết bị chưa ổn định.
+\end{itemize}
+
+\section{Đề xuất xử lý khi kết quả chưa phù hợp}
+Khi có chỉ tiêu không đạt hoặc kết quả lặp có độ phân tán lớn, cần xem xét theo Bảng~\ref{tab:de-xuat-xu-ly-ket-qua} trước khi đưa ra kết luận chính thức.
+
+\begin{table}[H]
+  \centering
+  \small
+  \renewcommand{\arraystretch}{1.3}
+  \caption{Đề xuất xử lý các tình huống kết quả kiểm nghiệm chưa phù hợp}
+  \label{tab:de-xuat-xu-ly-ket-qua}
+  \begin{tabular}{|p{0.27\textwidth}|p{0.31\textwidth}|p{0.30\textwidth}|}
+    \hline
+    \textbf{Tình huống} & \textbf{Nguyên nhân cần xem xét} & \textbf{Đề xuất xử lý} \\
+    \hline
+    Kết quả khác đáng kể so với chỉ tiêu công bố & Mẫu không đại diện, sai số pha loãng, nguyên liệu hoặc phối trộn không đồng đều & Kiểm tra mã mẫu, phân tích lặp từ mẫu lưu và thông báo bộ phận kỹ thuật hoặc sản xuất khi kết quả được xác nhận. \\
+    \hline
+    Độ lặp lại không đạt yêu cầu & Sai số thao tác, điểm kết thúc chuẩn độ chưa ổn định, thiết bị hoặc thuốc thử không phù hợp & Kiểm tra thiết bị, chuẩn hóa lại dung dịch, thực hiện lại phép thử và ghi nhận nguyên nhân. \\
+    \hline
+    Mẫu kali nằm ngoài khoảng đường chuẩn & Nồng độ mẫu quá cao hoặc quá thấp so với khoảng đo & Pha loãng hoặc điều chỉnh nồng độ mẫu phù hợp, sau đó đo lại và cập nhật hệ số pha loãng. \\
+    \hline
+    Mẫu chưa đạt khối lượng không đổi khi sấy & Thời gian sấy chưa đủ hoặc điều kiện làm nguội, cân chưa phù hợp & Tiếp tục chu kỳ sấy--làm nguội--cân đến khi khối lượng ổn định. \\
+    \hline
+  \end{tabular}
+\end{table}
+
 
 \chapter{Learning and Professional Development}
 \section{Technical knowledge gained}
