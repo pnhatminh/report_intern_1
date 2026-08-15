@@ -1,0 +1,41 @@
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      width=0.82\textwidth,
+      height=0.52\textwidth,
+      xlabel={Nồng độ kali (mg/L)},
+      ylabel={Cường độ phát xạ},
+      xmin=0, xmax=26,
+      ymin=0, ymax=27,
+      xtick={0,5,10,15,20,25},
+      ytick={0,5,10,15,20,25},
+      grid=both,
+      major grid style={gray!35},
+      minor grid style={gray!15},
+      legend style={at={(0.97,0.04)},anchor=south east,font=\small},
+      legend cell align={left}
+    ]
+      \addplot[
+        only marks,
+        mark=*,
+        mark size=2.3pt,
+        blue!75!black
+      ] coordinates {(0,0) (5,5) (10,10) (15,16) (20,21) (25,25)};
+      \addlegendentry{Số liệu chuẩn}
+      \addplot[red!75!black, very thick, domain=0:25, samples=100] {1.022857142857*x + 0.047619047619};
+      \addlegendentry{Hồi quy tuyến tính}
+      \node[
+        anchor=north west,
+        draw=black,
+        fill=white,
+        fill opacity=0.92,
+        text opacity=1,
+        align=left,
+        font=\small
+      ] at (axis cs:1,25.8) {$y = 1{,}0229x + 0{,}0476$\\$R^2 = 0{,}9976$};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Đường hồi quy tuyến tính của dãy chuẩn kali}
+  \label{fig:duong-hoi-quy-kali}
+\end{figure}

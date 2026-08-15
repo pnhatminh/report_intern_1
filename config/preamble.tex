@@ -1,0 +1,42 @@
+% ---------- Page layout and typography ----------
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\usepackage{setspace}
+\onehalfspacing
+
+% ---------- Figures, tables, links, and references ----------
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{pdflscape}
+\usepackage{pgfplots}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage[nameinlink,capitalise,noabbrev]{cleveref}
+
+\pgfplotsset{compat=1.18}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!50!black,
+  citecolor=green!40!black,
+  urlcolor=blue!60!black,
+  pdftitle={Industrial Internship Summary},
+  pdfauthor={Your Name}
+}
+
+% ---------- Convenient commands ----------
+\newcommand{\placeholder}[1]{\textcolor{blue!70!black}{[#1]}}
+\newcommand{\reporttitle}{Industrial Internship Summary}
+\renewcommand{\chaptername}{CHƯƠNG}
+\renewcommand{\thechapter}{\Roman{chapter}}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+\hypersetup{pageanchor=false}
+\graphicspath{{assets/images/}}
