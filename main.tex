@@ -755,10 +755,7 @@ Trong đó:
   \item $14{,}01$ là khối lượng mol của nitơ (g/mol).
 \end{itemize}
 
-\subsubsection{Kết quả và nhận xét}
-Kết quả được ghi nhận theo Bảng~\ref{tab:ket-qua-nito}. Mỗi mẫu được trình bày trên hai dòng tương ứng với hai lần lặp; cột KHM và kết quả trung bình được dùng chung cho cả hai lần lặp.
-
-\clearpage
+\newcommand{\NitrogenResultsTable}{%
 {\scriptsize
 \setlength{\tabcolsep}{2pt}
 \renewcommand{\arraystretch}{1.25}
@@ -905,6 +902,7 @@ Kết quả được ghi nhận theo Bảng~\ref{tab:ket-qua-nito}. Mỗi mẫu 
 }
 
 \noindent\textbf{Nhận xét:} Hiệu số thể tích chuẩn độ giữa mẫu thử và mẫu trắng cần được ghi nhận ổn định giữa các lần lặp. Hàm lượng \%N tính được được so sánh với chỉ tiêu công bố của sản phẩm; khi chênh lệch giữa các lần lặp vượt giới hạn kiểm soát nội bộ, cần kiểm tra lại quá trình phân hủy, chưng cất và chuẩn độ.
+}
 
 \subsection{Xác định kali hữu hiệu}
 \subsubsection{Nguyên tắc}
@@ -1107,9 +1105,7 @@ Trong đó:
   \item $1{,}205$ là hệ số quy đổi từ K sang K$_2$O.
 \end{itemize}
 
-\subsubsection{Kết quả và nhận xét}
-Sau khi nội suy nồng độ kali của mẫu từ đường chuẩn, kết quả được tính và ghi theo Bảng~\ref{tab:ket-qua-kali}.
-
+\newcommand{\PotassiumResultsTable}{%
 \begin{landscape}
 \begin{center}
 {\scriptsize
@@ -1198,6 +1194,7 @@ Sau khi nội suy nồng độ kali của mẫu từ đường chuẩn, kết qu
 \end{landscape}
 
 \noindent\textbf{Nhận xét:} Nồng độ kali của dung dịch mẫu cần nằm trong khoảng làm việc của đường chuẩn; nếu vượt khoảng này, mẫu phải được pha loãng thích hợp và tính lại hệ số pha loãng. Kết quả \%K$_2$O được đối chiếu với chỉ tiêu chất lượng của sản phẩm để đánh giá mức độ phù hợp của lô phân bón.
+}
 
 \subsection{Xác định lân hữu hiệu}
 \subsubsection{Nguyên tắc}
@@ -1329,9 +1326,7 @@ Trong đó:
   \item $m$ là khối lượng mẫu cân (g).
 \end{itemize}
 
-\subsubsection{Kết quả và nhận xét}
-Số liệu chuẩn độ và kết quả tính hàm lượng P$_2$O$_5$ hữu hiệu được tổng hợp theo Bảng~\ref{tab:ket-qua-lan}.
-
+\newcommand{\PhosphorusResultsTable}{%
 \begin{landscape}
 \begin{center}
 {\scriptsize
@@ -1457,6 +1452,7 @@ Số liệu chuẩn độ và kết quả tính hàm lượng P$_2$O$_5$ hữu h
 \end{landscape}
 
 \noindent\textbf{Nhận xét:} Điểm kết thúc chuẩn độ được nhận biết khi màu hồng của phenolphtalein vừa mất. Kết quả chỉ đáng tin cậy khi kết tủa được tạo thành, lọc và rửa hoàn toàn; thể tích chuẩn độ của các mẫu lặp cần có độ chênh lệch nằm trong giới hạn kiểm soát nội bộ trước khi so sánh \%P$_2$O$_5$ với chỉ tiêu công bố.
+}
 
 
 \subsection{Xác định carbon tổng}
@@ -1607,9 +1603,7 @@ Trong đó:
   \item $2{,}2$ là hệ số quy đổi từ carbon hữu cơ sang chất hữu cơ.
 \end{itemize}
 
-\subsubsection{Kết quả và nhận xét}
-Kết quả xác định carbon hữu cơ và quy đổi chất hữu cơ được ghi nhận theo Bảng~\ref{tab:ket-qua-carbon}.
-
+\newcommand{\CarbonResultsTable}{%
 \begin{landscape}
 \begin{center}
 {\scriptsize
@@ -1652,6 +1646,7 @@ Kết quả xác định carbon hữu cơ và quy đổi chất hữu cơ đư�
 \end{landscape}
 
 \noindent\textbf{Nhận xét:} Mẫu trắng là cơ sở để kiểm tra lượng K$_2$Cr$_2$O$_7$ dư, vì vậy thể tích muối Mohr của mẫu trắng phải được xác định đồng thời với mẫu thử. Sau oxy hóa, dung dịch không được có màu xanh; trường hợp này cho thấy lượng chất oxy hóa không đủ và phép thử cần được thực hiện lại. Giá trị \%OC và \%OM sau tính toán được dùng để đánh giá mức độ phù hợp của sản phẩm hữu cơ hoặc hữu cơ-khoáng.
+}
 
 \subsection{Xác định độ ẩm}
 \subsubsection{Nguyên tắc}
@@ -1725,9 +1720,7 @@ Trong đó:
   \item $(m_c+m_m)_{\mathrm{ss}}$ là khối lượng của mẫu và chén sau khi sấy, tính bằng gam.
 \end{itemize}
 
-\subsubsection{Kết quả và nhận xét}
-Kết quả cân trước và sau sấy được ghi nhận theo Bảng~\ref{tab:ket-qua-do-am}. Cần ghi khối lượng sau mỗi chu kỳ sấy để chứng minh mẫu đã đạt khối lượng không đổi.
-
+\newcommand{\MoistureResultsTable}{%
 \begin{table}[H]
   \centering
   \small
@@ -1748,92 +1741,491 @@ Kết quả cân trước và sau sấy được ghi nhận theo Bảng~\ref{tab
 \end{table}
 
 \noindent\textbf{Nhận xét:} Khối lượng mẫu sau các chu kỳ sấy liên tiếp cần ổn định trước khi tính độ ẩm. Nhiệt độ sấy phải được lựa chọn phù hợp với loại phân bón để hạn chế tổn thất các chất dễ bay hơi khác ngoài nước. Kết quả \%H$_2$O được so sánh với chỉ tiêu chất lượng hoặc quy định nội bộ áp dụng cho từng sản phẩm.
+}
 
 \section{Hướng dẫn thực hiện theo ISO}
 Trong thời gian thực tập, việc thực hiện công việc theo ISO tập trung vào tuân thủ quy trình thao tác chuẩn, sử dụng biểu mẫu đúng quy định và bảo đảm khả năng truy xuất của kết quả kiểm nghiệm. Mỗi bước từ tiếp nhận mẫu, chuẩn bị mẫu, vận hành thiết bị, ghi nhận số liệu đến lưu hồ sơ cần được thực hiện đầy đủ, rõ ràng và có người chịu trách nhiệm \cite{company-internal-document}.
 
 Thực tập sinh được hướng dẫn kiểm tra tình trạng thiết bị trước khi sử dụng, tuân thủ các hướng dẫn vận hành, ghi chép số liệu gốc trung thực và không tự ý sửa đổi kết quả. Các hồ sơ, biểu mẫu và tài liệu kỹ thuật được lưu giữ có hệ thống để hỗ trợ việc kiểm tra, đối chiếu và truy xuất thông tin khi cần thiết. Việc tuân thủ các yêu cầu này góp phần duy trì tính nhất quán, độ tin cậy và chất lượng của hoạt động kiểm nghiệm \cite{company-internal-document}.
 
-\chapter{Tổng hợp, đánh giá và thảo luận kết quả kiểm nghiệm}
-Phần này được hoàn thiện sau khi nhập số liệu chính thức vào các bảng kết quả của từng phép thử. Việc tổng hợp giúp đánh giá đồng thời mức độ đáp ứng chỉ tiêu chất lượng, độ ổn định giữa các lần lặp và những yếu tố có thể ảnh hưởng đến độ tin cậy của kết quả.
+\newcommand{\UpdatedPotassiumRepeatabilityTable}{%
+{\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{longtable}{|>{\centering\arraybackslash}p{0.14\textwidth}|>{\centering\arraybackslash}p{0.12\textwidth}|>{\centering\arraybackslash}p{0.13\textwidth}|>{\centering\arraybackslash}p{0.13\textwidth}|>{\centering\arraybackslash}p{0.13\textwidth}|>{\centering\arraybackslash}p{0.13\textwidth}|>{\centering\arraybackslash}p{0.10\textwidth}|}
+\caption{Kết quả tính lại và đánh giá độ lặp lại phép xác định kali hữu hiệu}\label{tab:do-lap-lai-kali} \\
+\hline
+\textbf{Ngày} & \textbf{KHM} & \textbf{Lần 1 (\%K$_2$O)} & \textbf{Lần 2 (\%K$_2$O)} & \textbf{KQTB (\%)} & \textbf{RPD (\%)} & \textbf{Đánh giá} \\
+\hline
+\endfirsthead
+\multicolumn{7}{c}{\tablename\ \thetable{} -- tiếp theo} \\
+\hline
+\textbf{Ngày} & \textbf{KHM} & \textbf{Lần 1 (\%K$_2$O)} & \textbf{Lần 2 (\%K$_2$O)} & \textbf{KQTB (\%)} & \textbf{RPD (\%)} & \textbf{Đánh giá} \\
+\hline
+\endhead
+\hline
+\multicolumn{7}{r}{\textit{Còn tiếp trang sau}} \\
+\endfoot
+\hline
+\endlastfoot
+01/07/2026 & 501X1 & 13,42 & 13,26 & 13,34 & 1,14 & Đạt \\
+\hline
+03/07/2026 & 603X1 & 8,78 & 9,24 & 9,01 & 5,03 & Không đạt \\
+\hline
+03/07/2026 & 401X2 & 3,45 & 3,45 & 3,45 & 0,00 & Đạt \\
+\hline
+03/07/2026 & 400X1 & 12,81 & 12,23 & 12,52 & 4,66 & Đạt \\
+\hline
+03/07/2026 & 300X1 & 3,39 & 3,39 & 3,39 & 0,00 & Đạt \\
+\hline
+03/07/2026 & 403X1 & 5,78 & 4,62 & 5,20 & 22,34 & Không đạt \\
+\hline
+04/07/2026 & 401X1 & 3,50 & 3,50 & 3,50 & 0,00 & Đạt \\
+\hline
+04/07/2026 & 20X3 & 10,58 & 10,41 & 10,49 & 1,61 & Đạt \\
+\hline
+05/07/2026 & 507X1 & 7,53 & 7,62 & 7,58 & 1,17 & Đạt \\
+\hline
+06/07/2026 & 12X1 & 9,91 & 9,40 & 9,66 & 5,26 & Không đạt \\
+\hline
+08/07/2026 & 05X1 & 2,89 & 2,89 & 2,89 & 0,00 & Đạt \\
+\hline
+11/07/2026 & 20X3 & 9,86 & 10,00 & 9,93 & 1,41 & Đạt \\
+\hline
+11/07/2026 & 507X1 & 7,60 & 7,60 & 7,60 & 0,06 & Đạt \\
+\hline
+16/07/2026 & 403X1 & 5,74 & 5,87 & 5,81 & 2,30 & Đạt \\
+\hline
+16/07/2026 & 94MX1 & 60,37 & 62,56 & 61,46 & 3,55 & Đạt \\
+\hline
+21/07/2026 & 402X1 & 7,98 & 7,57 & 7,78 & 5,28 & Không đạt \\
+\hline
+25/07/2026 & 20X3 & 10,00 & 9,95 & 9,97 & 0,44 & Đạt \\
+\hline
+26/07/2026 & 20X3 & 10,67 & 10,91 & 10,79 & 2,22 & Đạt \\
+\hline
+27/07/2026 & 408X3 & 25,91 & 25,76 & 25,84 & 0,58 & Đạt \\
+\hline
+27/07/2026 & 04X1 & 32,89 & 44,75 & 38,82 & 30,55 & Không đạt \\
+\hline
+\end{longtable}
+}}
 
-\section{Tổng hợp kết quả theo chỉ tiêu chất lượng}
-Các kết quả cuối cùng được so sánh với chỉ tiêu công bố hoặc tiêu chuẩn kỹ thuật áp dụng cho từng sản phẩm. Khi sử dụng bảng này, kết quả phân tích nên là giá trị trung bình của các lần lặp hợp lệ.
+\chapter{Tổng hợp, đánh giá và thảo luận kết quả kiểm nghiệm}
+Chương này tổng hợp số liệu đã ghi nhận trong quá trình thực tập, đánh giá độ lặp lại của từng phép đo và tạo cơ sở để đối chiếu với chỉ tiêu chất lượng công bố của từng sản phẩm.
+
+\section{Kết quả phân tích và đánh giá độ lặp lại}
+Độ lặp lại được xem xét trước hết thông qua chênh lệch tuyệt đối $d$ và chênh lệch tương đối giữa hai kết quả (RPD):
+\[
+  d=\left|x_1-x_2\right|, \qquad
+  \mathrm{RPD}(\%)=\frac{\left|x_1-x_2\right|}{\left(x_1+x_2\right)/2}\times100.
+\]
+Giá trị RPD của từng mẫu được đối chiếu với các giới hạn chấp nhận trong quy định kiểm soát nội bộ của công ty, được tổng hợp tại Bảng~\ref{tab:nguong-rpd}.
 
 \begin{table}[H]
   \centering
   \small
   \renewcommand{\arraystretch}{1.3}
-  \caption{Bảng tổng hợp và đối chiếu kết quả kiểm nghiệm}
+  \caption{Ngưỡng chấp nhận độ lặp lại cho các chỉ tiêu kiểm nghiệm}
+  \label{tab:nguong-rpd}
+  \begin{tabular}{|>{\centering\arraybackslash}p{0.12\textwidth}|p{0.34\textwidth}|>{\centering\arraybackslash}p{0.22\textwidth}|p{0.20\textwidth}|}
+    \hline
+    \textbf{STT} & \textbf{Chỉ tiêu kiểm nghiệm} & \textbf{Ngưỡng RPD chấp nhận} & \textbf{Căn cứ đánh giá} \\
+    \hline
+    1 & Đạm tổng số & $\mathrm{RPD}\leq5\%$ & Quy định nội bộ \\
+    \hline
+    2 & Kali hữu hiệu (K$_2$O) & $\mathrm{RPD}\leq5\%$ & Quy định nội bộ \\
+    \hline
+    3 & Lân hữu hiệu (P$_2$O$_5$) & $\mathrm{RPD}\leq5\%$ & Quy định nội bộ \\
+    \hline
+    4 & Chất hữu cơ (OM) & $\mathrm{RPD}\leq0{,}5\%$ & Quy định nội bộ \\
+    \hline
+    5 & Độ ẩm (H$_2$O) & $\mathrm{RPD}\leq0{,}1\%$ & Quy định nội bộ \\
+    \hline
+  \end{tabular}
+\end{table}
+
+\noindent\textit{Nguồn: Tài liệu nội bộ của Công ty TNHH Quốc Tế Khánh Sinh \cite{company-internal-document}.}
+
+\subsection{Kết quả xác định đạm tổng số}
+\NitrogenResultsTable
+
+\subsubsection{Đánh giá độ lặp lại}
+Kết quả ở Bảng~\ref{tab:ket-qua-nito} được tổng hợp lại theo từng ngày và từng mã mẫu trong Bảng~\ref{tab:do-lap-lai-nito}. Sai lệch tương đối giữa hai lần phân tích được tính theo RPD; tiêu chí chấp nhận áp dụng cho phép đo đạm tổng số là $\mathrm{RPD}\leq5\%$.
+
+\clearpage
+{\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{longtable}{|>{\centering\arraybackslash}p{0.14\textwidth}|>{\centering\arraybackslash}p{0.12\textwidth}|>{\centering\arraybackslash}p{0.13\textwidth}|>{\centering\arraybackslash}p{0.13\textwidth}|>{\centering\arraybackslash}p{0.13\textwidth}|>{\centering\arraybackslash}p{0.13\textwidth}|>{\centering\arraybackslash}p{0.10\textwidth}|}
+\caption{Đánh giá độ lặp lại phép xác định đạm tổng số theo từng mẫu}\label{tab:do-lap-lai-nito} \\
+\hline
+\textbf{Ngày} & \textbf{KHM} & \textbf{Lần 1 (\%N)} & \textbf{Lần 2 (\%N)} & \textbf{$d$ (điểm \%)} & \textbf{RPD (\%)} & \textbf{Đánh giá} \\
+\hline
+\endfirsthead
+\multicolumn{7}{c}{\tablename\ \thetable{} -- tiếp theo} \\
+\hline
+\textbf{Ngày} & \textbf{KHM} & \textbf{Lần 1 (\%N)} & \textbf{Lần 2 (\%N)} & \textbf{$d$ (điểm \%)} & \textbf{RPD (\%)} & \textbf{Đánh giá} \\
+\hline
+\endhead
+\hline
+\multicolumn{7}{r}{\textit{Còn tiếp trang sau}} \\
+\endfoot
+\hline
+\endlastfoot
+01/07/2026 & 501X1 & 12,16 & 12,46 & 0,30 & 2,44 & Đạt \\
+\hline
+03/07/2026 & 603X1 & 14,36 & 14,22 & 0,14 & 0,98 & Đạt \\
+\hline
+03/07/2026 & 401X2 & 5,88 & 5,88 & 0,00 & 0,00 & Đạt \\
+\hline
+03/07/2026 & 400X1 & 19,87 & 19,87 & 0,00 & 0,00 & Đạt \\
+\hline
+03/07/2026 & 300X1 & 9,56 & 9,56 & 0,00 & 0,00 & Đạt \\
+\hline
+03/07/2026 & 403X1 & 14,82 & 14,95 & 0,13 & 0,87 & Đạt \\
+\hline
+04/07/2026 & 401X1 & 5,64 & 5,69 & 0,05 & 0,88 & Đạt \\
+\hline
+04/07/2026 & 20X3 & 19,62 & 19,76 & 0,14 & 0,71 & Đạt \\
+\hline
+05/07/2026 & 507X1 & 13,13 & 13,38 & 0,25 & 1,89 & Đạt \\
+\hline
+05/07/2026 & 02X1(tr) & 20,06 & 20,18 & 0,12 & 0,60 & Đạt \\
+\hline
+06/07/2026 & 02X1(v) & 20,32 & 20,45 & 0,13 & 0,64 & Đạt \\
+\hline
+06/07/2026 & 01X1 & 24,39 & 24,46 & 0,07 & 0,29 & Đạt \\
+\hline
+06/07/2026 & 12X1 & 11,78 & 11,91 & 0,13 & 1,10 & Đạt \\
+\hline
+06/07/2026 & DAP & 14,72 & 14,85 & 0,13 & 0,88 & Đạt \\
+\hline
+08/07/2026 & 05X1 & 4,94 & 5,04 & 0,10 & 2,00 & Đạt \\
+\hline
+11/07/2026 & 20X3 & 20,19 & 20,05 & 0,14 & 0,70 & Đạt \\
+\hline
+11/07/2026 & 507X1 & 13,46 & 13,59 & 0,13 & 0,96 & Đạt \\
+\hline
+11/07/2026 & 01X1 & 24,45 & 24,68 & 0,23 & 0,94 & Đạt \\
+\hline
+13/07/2026 & 46X1 & 44,76 & 44,90 & 0,14 & 0,31 & Đạt \\
+\hline
+14/07/2026 & 400X1 & 20,34 & 20,47 & 0,13 & 0,64 & Đạt \\
+\hline
+14/07/2026 & 403X1 & 15,57 & 15,57 & 0,00 & 0,00 & Đạt \\
+\hline
+14/07/2026 & 300X1 & 9,22 & 9,35 & 0,13 & 1,40 & Đạt \\
+\hline
+14/07/2026 & 309X1 & 14,37 & 14,50 & 0,13 & 0,90 & Đạt \\
+\hline
+15/07/2026 & 507X1 & 14,10 & 14,24 & 0,14 & 0,99 & Đạt \\
+\hline
+16/07/2026 & 403X1 & 14,39 & 14,52 & 0,13 & 0,90 & Đạt \\
+\hline
+16/07/2026 & 02X1 & 20,23 & 20,37 & 0,14 & 0,69 & Đạt \\
+\hline
+16/07/2026 & 46X1 & 45,97 & 45,97 & 0,00 & 0,00 & Đạt \\
+\hline
+18/07/2026 & 02X1 & 20,06 & 20,06 & 0,00 & 0,00 & Đạt \\
+\hline
+20/07/2026 & 02X1 & 17,78 & 18,10 & 0,32 & 1,78 & Đạt \\
+\hline
+21/07/2026 & 402X1 & 12,49 & 12,61 & 0,12 & 0,96 & Đạt \\
+\hline
+25/07/2026 & 20X3 & 18,05 & 17,92 & 0,13 & 0,72 & Đạt \\
+\hline
+25/07/2026 & 02X1 & 20,28 & 20,40 & 0,12 & 0,59 & Đạt \\
+\hline
+26/07/2026 & 20X3 & 18,85 & 18,98 & 0,13 & 0,69 & Đạt \\
+\hline
+26/07/2026 & 02X1 & 20,43 & 20,43 & 0,00 & 0,00 & Đạt \\
+\hline
+27/07/2026 & 02X1 & 20,38 & 20,25 & 0,13 & 0,64 & Đạt \\
+\hline
+27/07/2026 & 01X1 & 24,50 & 24,64 & 0,14 & 0,57 & Đạt \\
+\hline
+27/07/2026 & 20X3 & 19,10 & 19,03 & 0,07 & 0,37 & Đạt \\
+\hline
+27/07/2026 & 408X3 & 9,95 & 10,09 & 0,14 & 1,40 & Đạt \\
+\hline
+28/07/2026 & 01X1 & 24,88 & 25,17 & 0,29 & 1,16 & Đạt \\
+\hline
+29/07/2026 & 01X1 & 25,06 & 25,06 & 0,00 & 0,00 & Đạt \\
+\hline
+30/07/2026 & 01X1 & 24,83 & 24,83 & 0,00 & 0,00 & Đạt \\
+\hline
+\end{longtable}
+}
+
+\noindent\textbf{Nhận xét:} Kết quả đánh giá độ lặp của phép xác định hàm lượng nitơ cho thấy tất cả 41 mẫu đều có giá trị RPD nhỏ hơn 5\%, đáp ứng tiêu chí chấp nhận về độ lặp của phương pháp. 
+Giá trị RPD dao động từ 0,00\% đến 2,44\%, trong đó giá trị lớn nhất ghi nhận ở mẫu 501X1 ngày 01/07/2026 là 2,44\%, vẫn thấp hơn đáng kể so với giới hạn cho phép. 
+Giá trị RPD trung bình của toàn bộ tập mẫu vào khoảng 0,75\%, cho thấy mức độ sai khác giữa hai lần phân tích nhìn chung rất nhỏ. 
+Nhiều mẫu có RPD bằng 0 hoặc dưới 1\%, chứng tỏ kết quả giữa các lần lặp có độ tương đồng cao. 
+Tuy nhiên, kết quả này chủ yếu phản ánh độ lặp trong cùng điều kiện phân tích vì vậy chưa đủ để kết luận về độ đúng hay độ tái lập của phương pháp.
+
+\subsection{Kết quả xác định kali hữu hiệu}
+\PotassiumResultsTable
+
+\subsubsection{Đánh giá độ lặp lại}
+Các kết quả \%K$_2$O ở Bảng~\ref{tab:ket-qua-kali} được tổng hợp theo từng ngày và mã mẫu trong Bảng~\ref{tab:do-lap-lai-kali}. Tiêu chí chấp nhận đối với phép xác định kali hữu hiệu là $\mathrm{RPD}\leq5\%$.
+
+{\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{longtable}{|>{\centering\arraybackslash}p{0.14\textwidth}|>{\centering\arraybackslash}p{0.12\textwidth}|>{\centering\arraybackslash}p{0.13\textwidth}|>{\centering\arraybackslash}p{0.13\textwidth}|>{\centering\arraybackslash}p{0.13\textwidth}|>{\centering\arraybackslash}p{0.13\textwidth}|>{\centering\arraybackslash}p{0.10\textwidth}|}
+\caption{Đánh giá độ lặp lại phép xác định kali hữu hiệu theo từng mẫu}\label{tab:do-lap-lai-kali} \\
+\hline
+\textbf{Ngày} & \textbf{KHM} & \textbf{Lần 1 (\%K$_2$O)} & \textbf{Lần 2 (\%K$_2$O)} & \textbf{$d$ (điểm \%)} & \textbf{RPD (\%)} & \textbf{Đánh giá} \\
+\hline
+\endfirsthead
+\multicolumn{7}{c}{\tablename\ \thetable{} -- tiếp theo} \\
+\hline
+\textbf{Ngày} & \textbf{KHM} & \textbf{Lần 1 (\%K$_2$O)} & \textbf{Lần 2 (\%K$_2$O)} & \textbf{$d$ (điểm \%)} & \textbf{RPD (\%)} & \textbf{Đánh giá} \\
+\hline
+\endhead
+\hline
+\multicolumn{7}{r}{\textit{Còn tiếp trang sau}} \\
+\endfoot
+\hline
+\endlastfoot
+01/07/2026 & 501X1 & 13,39 & 13,24 & 0,15 & 1,13 & Đạt \\
+\hline
+03/07/2026 & 603X1 & 8,65 & 9,12 & 0,47 & 5,29 & Không đạt \\
+\hline
+03/07/2026 & 401X2 & 3,20 & 3,20 & 0,00 & 0,00 & Đạt \\
+\hline
+03/07/2026 & 400X1 & 12,78 & 12,18 & 0,60 & 4,81 & Đạt \\
+\hline
+03/07/2026 & 300X1 & 3,14 & 3,14 & 0,00 & 0,00 & Đạt \\
+\hline
+03/07/2026 & 403X1 & 5,58 & 4,39 & 1,19 & 23,87 & Không đạt \\
+\hline
+04/07/2026 & 401X1 & 3,25 & 3,25 & 0,00 & 0,00 & Đạt \\
+\hline
+04/07/2026 & 20X3 & 10,75 & 10,56 & 0,19 & 1,78 & Đạt \\
+\hline
+05/07/2026 & 507X1 & 7,39 & 7,46 & 0,07 & 0,94 & Đạt \\
+\hline
+06/07/2026 & 12X1 & 9,81 & 9,29 & 0,52 & 5,45 & Không đạt \\
+\hline
+08/07/2026 & 05X1 & 2,86 & 2,86 & 0,00 & 0,00 & Đạt \\
+\hline
+11/07/2026 & 20X3 & 9,75 & 9,88 & 0,13 & 1,32 & Đạt \\
+\hline
+11/07/2026 & 507X1 & 7,44 & 7,45 & 0,01 & 0,13 & Đạt \\
+\hline
+16/07/2026 & 403X1 & 5,54 & 5,67 & 0,13 & 2,32 & Đạt \\
+\hline
+16/07/2026 & 94MX1 & 60,44 & 62,99 & 2,55 & 4,13 & Đạt \\
+\hline
+21/07/2026 & 402X1 & 7,63 & 7,21 & 0,42 & 5,66 & Không đạt \\
+\hline
+25/07/2026 & 20X3 & 9,64 & 9,60 & 0,04 & 0,42 & Đạt \\
+\hline
+26/07/2026 & 20X3 & 10,31 & 10,56 & 0,25 & 2,40 & Đạt \\
+\hline
+27/07/2026 & 408X3 & 25,21 & 25,07 & 0,14 & 0,56 & Đạt \\
+\hline
+27/07/2026 & 04X1 & 61,95 & 60,19 & 1,76 & 2,88 & Đạt \\
+\hline
+\end{longtable}
+}
+
+\noindent\textbf{Nhận xét:} Trong 20 cặp kết quả, 16 cặp đạt yêu cầu RPD không quá 5\%. Bốn mẫu chưa đạt là 603X1 ngày 03/07/2026 (5,29\%), 403X1 ngày 03/07/2026 (23,87\%), 12X1 ngày 06/07/2026 (5,45\%) và 402X1 ngày 21/07/2026 (5,66\%). Các mẫu này cần được kiểm tra lại mẫu trắng, hiệu chuẩn máy quang kế ngọn lửa, hệ số pha loãng và độ đồng nhất của dịch chiết trước khi dùng kết quả để đánh giá lô sản phẩm.
+
+\subsection{Kết quả xác định lân hữu hiệu}
+\PhosphorusResultsTable
+
+\subsubsection{Đánh giá độ lặp lại}
+Sự phù hợp giữa hai lần lặp của phép xác định lân hữu hiệu được đánh giá từ kết quả \%P$_2$O$_5$ cuối cùng. Bảng~\ref{tab:do-lap-lai-lan} sử dụng tiêu chí $\mathrm{RPD}\leq5\%$.
+
+{\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{longtable}{|>{\centering\arraybackslash}p{0.14\textwidth}|>{\centering\arraybackslash}p{0.12\textwidth}|>{\centering\arraybackslash}p{0.13\textwidth}|>{\centering\arraybackslash}p{0.13\textwidth}|>{\centering\arraybackslash}p{0.13\textwidth}|>{\centering\arraybackslash}p{0.13\textwidth}|>{\centering\arraybackslash}p{0.10\textwidth}|}
+\caption{Đánh giá độ lặp lại phép xác định lân hữu hiệu theo từng mẫu}\label{tab:do-lap-lai-lan} \\
+\hline
+\textbf{Ngày} & \textbf{KHM} & \textbf{Lần 1 (\%P$_2$O$_5$)} & \textbf{Lần 2 (\%P$_2$O$_5$)} & \textbf{$d$ (điểm \%)} & \textbf{RPD (\%)} & \textbf{Đánh giá} \\
+\hline
+\endfirsthead
+\multicolumn{7}{c}{\tablename\ \thetable{} -- tiếp theo} \\
+\hline
+\textbf{Ngày} & \textbf{KHM} & \textbf{Lần 1 (\%P$_2$O$_5$)} & \textbf{Lần 2 (\%P$_2$O$_5$)} & \textbf{$d$ (điểm \%)} & \textbf{RPD (\%)} & \textbf{Đánh giá} \\
+\hline
+\endhead
+\hline
+\multicolumn{7}{r}{\textit{Còn tiếp trang sau}} \\
+\endfoot
+\hline
+\endlastfoot
+01/07/2026 & 501X1 & 12,21 & 12,21 & 0,00 & 0,00 & Đạt \\
+\hline
+02/07/2026 & 03DGX1 & 16,52 & 16,38 & 0,14 & 0,85 & Đạt \\
+\hline
+03/07/2026 & 603X1 & 4,69 & 4,63 & 0,06 & 1,29 & Đạt \\
+\hline
+03/07/2026 & 401X2 & 8,41 & 8,53 & 0,12 & 1,42 & Đạt \\
+\hline
+03/07/2026 & 400X1 & 3,63 & 3,52 & 0,11 & 3,08 & Đạt \\
+\hline
+03/07/2026 & 300X1 & 5,91 & 6,05 & 0,14 & 2,34 & Đạt \\
+\hline
+03/07/2026 & 403X1 & 4,24 & 4,38 & 0,14 & 3,25 & Đạt \\
+\hline
+04/07/2026 & 401X1 & 9,40 & 9,40 & 0,00 & 0,00 & Đạt \\
+\hline
+04/07/2026 & 03DGX1 & 16,33 & 16,18 & 0,15 & 0,92 & Đạt \\
+\hline
+06/07/2026 & 12X1 & 5,16 & 4,92 & 0,24 & 4,76 & Đạt \\
+\hline
+08/07/2026 & 05X1 & 9,84 & 9,84 & 0,00 & 0,00 & Đạt \\
+\hline
+11/07/2026 & 03DGX1 & 16,58 & 16,45 & 0,13 & 0,79 & Đạt \\
+\hline
+13/07/2026 & 03DGX1 & 16,71 & 16,04 & 0,67 & 4,09 & Đạt \\
+\hline
+14/07/2026 & 403X1 & 3,68 & 3,68 & 0,00 & 0,00 & Đạt \\
+\hline
+14/07/2026 & 402X1 & 4,90 & 4,77 & 0,13 & 2,69 & Đạt \\
+\hline
+23/07/2026 & 03LCX1 & 14,94 & 15,24 & 0,30 & 1,99 & Đạt \\
+\hline
+25/07/2026 & 03LCX1 & 4,80 & 4,70 & 0,10 & 2,11 & Đạt \\
+\hline
+27/07/2026 & 408X3 & 2,88 & 3,18 & 0,30 & 9,90 & Không đạt \\
+\hline
+03/06/2026 & 603X1 & 3,57 & 3,50 & 0,07 & 1,98 & Đạt \\
+\hline
+03/06/2026 & 401X2 & 8,91 & 8,63 & 0,28 & 3,19 & Đạt \\
+\hline
+03/06/2026 & 501X1 & 12,35 & 12,22 & 0,13 & 1,06 & Đạt \\
+\hline
+03/06/2026 & 05X1 & 10,49 & 10,64 & 0,15 & 1,42 & Đạt \\
+\hline
+03/06/2026 & 12X1 & 5,39 & 5,33 & 0,06 & 1,12 & Đạt \\
+\hline
+03/06/2026 & 401X1 & 9,45 & 9,33 & 0,12 & 1,28 & Đạt \\
+\hline
+03/06/2026 & 12X1 & 5,32 & 5,56 & 0,24 & 4,41 & Đạt \\
+\hline
+05/06/2026 & 400X1 & 3,58 & 3,44 & 0,14 & 3,99 & Đạt \\
+\hline
+05/06/2026 & 403X1 & 4,19 & 4,33 & 0,14 & 3,29 & Đạt \\
+\hline
+05/06/2026 & 300X1 & 6,25 & 6,11 & 0,14 & 2,27 & Đạt \\
+\hline
+05/06/2026 & 402X1 & 4,87 & 5,17 & 0,30 & 5,98 & Không đạt \\
+\hline
+04/06/2026 & 03DGX1 & 16,14 & 16,02 & 0,12 & 0,75 & Đạt \\
+\hline
+15/06/2026 & 03DGX1 & 16,62 & 16,49 & 0,13 & 0,79 & Đạt \\
+\hline
+24/06/2026 & 03DGX1 & 16,33 & 16,66 & 0,33 & 2,00 & Đạt \\
+\hline
+\end{longtable}
+}
+
+\noindent\textbf{Nhận xét:} Trong 32 cặp kết quả, 30 cặp đạt yêu cầu RPD không quá 5\%. Hai mẫu chưa đạt gồm 408X3 ngày 27/07/2026 (RPD 9,90\%) và 402X1 ngày 05/06/2026 (RPD 5,98\%). Hai mẫu này cần được thử lại, đồng thời kiểm tra các công đoạn tạo kết tủa, lọc, rửa, hòa tan kết tủa và nhận biết điểm kết thúc chuẩn độ.
+
+\subsection{Kết quả xác định carbon hữu cơ tổng số}
+\CarbonResultsTable
+
+\subsubsection{Đánh giá độ lặp lại}
+Với phép Walkley--Black, chỉ tiêu được đánh giá là giá trị chất hữu cơ (OM). Bảng~\ref{tab:do-lap-lai-carbon} áp dụng tiêu chí nghiêm ngặt $\mathrm{RPD}\leq0{,}5\%$.
+
+\begin{table}[H]
+  \centering
+  \small
+  \renewcommand{\arraystretch}{1.25}
+  \caption{Đánh giá độ lặp lại phép xác định chất hữu cơ theo từng mẫu}
+  \label{tab:do-lap-lai-carbon}
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{|>{\centering\arraybackslash}p{0.15\textwidth}|>{\centering\arraybackslash}p{0.14\textwidth}|>{\centering\arraybackslash}p{0.15\textwidth}|>{\centering\arraybackslash}p{0.15\textwidth}|>{\centering\arraybackslash}p{0.14\textwidth}|>{\centering\arraybackslash}p{0.14\textwidth}|>{\centering\arraybackslash}p{0.13\textwidth}|}
+    \hline
+    \textbf{Ngày} & \textbf{KHM} & \textbf{Lần 1 (\%OM)} & \textbf{Lần 2 (\%OM)} & \textbf{$d$ (điểm \%)} & \textbf{RPD (\%)} & \textbf{Đánh giá} \\
+    \hline
+    03/06/2026 & HClX2 & 19,41 & 18,81 & 0,60 & 3,14 & Không đạt \\
+    \hline
+    03/06/2026 & HClX2 & 21,91 & 24,79 & 2,88 & 12,33 & Không đạt \\
+    \hline
+    06/2026 & MHCX2 & 17,34 & 17,01 & 0,33 & 1,92 & Không đạt \\
+    \hline
+    15/07/2026 & HClX2 & 19,38 & 18,65 & 0,73 & 3,84 & Không đạt \\
+    \hline
+    22/07/2026 & HClX2 & 19,19 & 19,76 & 0,57 & 2,93 & Không đạt \\
+    \hline
+  \end{tabular}
+  }
+\end{table}
+
+\noindent\textbf{Nhận xét:} Cả 5 cặp kết quả OM đều có RPD lớn hơn 0,5\%, vì vậy chưa đạt yêu cầu độ lặp lại theo tiêu chí đã áp dụng. RPD dao động từ 1,92\% đến 12,33\%, trong đó chênh lệch lớn nhất thuộc mẫu HClX2 ngày 03/06/2026 có kết quả 21,91\% và 24,79\%. Các phép thử này cần được thực hiện lại sau khi tăng cường đồng nhất mẫu, kiểm tra thể tích dicromat, điều kiện oxy hóa và chuẩn độ bằng muối Mohr.
+
+\subsection{Kết quả xác định độ ẩm}
+\MoistureResultsTable
+
+\subsubsection{Đánh giá độ lặp lại}
+Bảng~\ref{tab:do-lap-lai-do-am} được lập theo cùng nguyên tắc để đánh giá độ lặp lại độ ẩm, với tiêu chí $\mathrm{RPD}\leq0{,}1\%$. Do chưa có số liệu cân và kết quả \%H$_2$O chính thức, các ô được giữ để bổ sung khi hoàn tất phép thử.
+
+\begin{table}[H]
+  \centering
+  \small
+  \renewcommand{\arraystretch}{1.3}
+  \caption{Đánh giá độ lặp lại phép xác định độ ẩm theo từng mẫu}
+  \label{tab:do-lap-lai-do-am}
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{|>{\centering\arraybackslash}p{0.16\textwidth}|>{\centering\arraybackslash}p{0.14\textwidth}|>{\centering\arraybackslash}p{0.15\textwidth}|>{\centering\arraybackslash}p{0.15\textwidth}|>{\centering\arraybackslash}p{0.14\textwidth}|>{\centering\arraybackslash}p{0.13\textwidth}|>{\centering\arraybackslash}p{0.13\textwidth}|}
+    \hline
+    \textbf{Ngày} & \textbf{KHM} & \textbf{Lần 1 (\%H$_2$O)} & \textbf{Lần 2 (\%H$_2$O)} & \textbf{$d$ (điểm \%)} & \textbf{RPD (\%)} & \textbf{Đánh giá} \\
+    \hline
+    [Bổ sung] & [Bổ sung] & [Bổ sung] & [Bổ sung] & [Bổ sung] & [Bổ sung] & [Bổ sung] \\
+    \hline
+    [Bổ sung] & [Bổ sung] & [Bổ sung] & [Bổ sung] & [Bổ sung] & [Bổ sung] & [Bổ sung] \\
+    \hline
+  \end{tabular}
+  }
+\end{table}
+
+\noindent\textbf{Nhận xét:} Sau khi bổ sung số liệu, cần tính RPD cho từng cặp kết quả \%H$_2$O. Mẫu chỉ được đánh giá đạt khi RPD không vượt quá 0,1\% và khối lượng sau các chu kỳ sấy đã đạt trạng thái không đổi. Chưa thể kết luận định lượng cho phép xác định độ ẩm ở thời điểm hiện tại.
+
+\section{Đánh giá sai lệch giữa kết quả đo và giá trị công bố}
+Giá trị phân tích trung bình của từng mẫu được so sánh với giá trị công bố trên nhãn, tiêu chuẩn cơ sở hoặc hồ sơ kỹ thuật tương ứng. Chênh lệch được tính như sau:
+\[
+  \Delta = \bar{x}-x_{\mathrm{cb}}, \qquad
+  \delta(\%)=\frac{\Delta}{x_{\mathrm{cb}}}\times100.
+\]
+Trong đó, $\bar{x}$ là kết quả trung bình của các lần lặp hợp lệ, $x_{\mathrm{cb}}$ là giá trị công bố, $\Delta$ là sai lệch tuyệt đối và $\delta$ là sai lệch tương đối.
+
+\begin{table}[H]
+  \centering
+  \small
+  \renewcommand{\arraystretch}{1.3}
+  \caption{Bảng đối chiếu kết quả đo với giá trị công bố}
   \label{tab:tong-hop-ket-qua-kiem-nghiem}
   \resizebox{\textwidth}{!}{%
-  \begin{tabular}{|p{0.15\textwidth}|p{0.14\textwidth}|>{\centering\arraybackslash}p{0.13\textwidth}|>{\centering\arraybackslash}p{0.13\textwidth}|>{\centering\arraybackslash}p{0.13\textwidth}|>{\centering\arraybackslash}p{0.14\textwidth}|>{\centering\arraybackslash}p{0.12\textwidth}|}
+  \begin{tabular}{|p{0.15\textwidth}|p{0.15\textwidth}|>{\centering\arraybackslash}p{0.13\textwidth}|>{\centering\arraybackslash}p{0.13\textwidth}|>{\centering\arraybackslash}p{0.12\textwidth}|>{\centering\arraybackslash}p{0.12\textwidth}|>{\centering\arraybackslash}p{0.12\textwidth}|}
     \hline
-    \centering\textbf{Mã mẫu / sản phẩm} & \centering\textbf{Chỉ tiêu} & \textbf{Chỉ tiêu công bố (\%)} & \textbf{Kết quả trung bình (\%)} & \textbf{Chênh lệch (điểm \%)} & \textbf{Mức chênh lệch tương đối (\%)} & \textbf{Đánh giá} \\
+    \centering\textbf{Mã mẫu / sản phẩm} & \centering\textbf{Chỉ tiêu} & \textbf{Giá trị công bố (\%)} & \textbf{Kết quả TB (\%)} & \textbf{$\Delta$ (điểm \%)} & \textbf{$\delta$ (\%)} & \textbf{Nhận xét} \\
     \hline
-    & Đạm tổng số & & & & & \\
+    [Bổ sung] & Đạm tổng số & [Bổ sung] & [Bổ sung] & [Bổ sung] & [Bổ sung] & [Bổ sung] \\
     \hline
-    & K$_2$O hữu hiệu & & & & & \\
+    [Bổ sung] & K$_2$O hữu hiệu & [Bổ sung] & [Bổ sung] & [Bổ sung] & [Bổ sung] & [Bổ sung] \\
     \hline
-    & P$_2$O$_5$ hữu hiệu & & & & & \\
+    [Bổ sung] & P$_2$O$_5$ hữu hiệu & [Bổ sung] & [Bổ sung] & [Bổ sung] & [Bổ sung] & [Bổ sung] \\
     \hline
-    & Carbon hữu cơ / chất hữu cơ & & & & & \\
+    [Bổ sung] & Chất hữu cơ (OM) & [Bổ sung] & [Bổ sung] & [Bổ sung] & [Bổ sung] & [Bổ sung] \\
     \hline
-    & Độ ẩm & & & & & \\
-    \hline
-  \end{tabular}
-  }
-\end{table}
-
-Chênh lệch giữa kết quả trung bình và chỉ tiêu công bố được xác định theo công thức:
-\[
-  \Delta = \bar{x} - x_{\mathrm{cb}}
-\]
-\[
-  \delta = \frac{\Delta}{x_{\mathrm{cb}}} \times 100
-\]
-Trong đó, $\bar{x}$ là kết quả trung bình của các lần lặp, $x_{\mathrm{cb}}$ là chỉ tiêu công bố, $\Delta$ là chênh lệch tuyệt đối và $\delta$ là chênh lệch tương đối.
-
-\noindent\textbf{Gợi ý viết nhận xét:} Nêu chỉ tiêu nào đạt hoặc không đạt so với mức công bố; chỉ ra chỉ tiêu có chênh lệch lớn nhất; đồng thời nhận xét liệu mức chênh lệch có phù hợp với giới hạn kiểm soát nội bộ và sai số của phương pháp hay không.
-
-\section{Đánh giá độ lặp lại của phép thử}
-Độ lặp lại được đánh giá từ các phép đo lặp trên cùng một mẫu. Giá trị trung bình, độ lệch chuẩn và độ lệch chuẩn tương đối giúp nhận biết mức độ phân tán của kết quả.
-
-\begin{table}[H]
-  \centering
-  \small
-  \renewcommand{\arraystretch}{1.3}
-  \caption{Bảng đánh giá độ lặp lại của kết quả kiểm nghiệm}
-  \label{tab:do-lap-lai-ket-qua}
-  \resizebox{\textwidth}{!}{%
-  \begin{tabular}{|p{0.17\textwidth}|p{0.16\textwidth}|>{\centering\arraybackslash}p{0.11\textwidth}|>{\centering\arraybackslash}p{0.11\textwidth}|>{\centering\arraybackslash}p{0.11\textwidth}|>{\centering\arraybackslash}p{0.11\textwidth}|>{\centering\arraybackslash}p{0.11\textwidth}|>{\centering\arraybackslash}p{0.11\textwidth}|}
-    \hline
-    \centering\textbf{Mã mẫu} & \centering\textbf{Chỉ tiêu} & \textbf{Lần 1} & \textbf{Lần 2} & \textbf{Lần 3} & \textbf{Trung bình} & \textbf{RSD (\%)} & \textbf{Đánh giá} \\
-    \hline
-    & & & & & & & \\
-    \hline
-    & & & & & & & \\
+    [Bổ sung] & Độ ẩm & [Bổ sung] & [Bổ sung] & [Bổ sung] & [Bổ sung] & [Bổ sung] \\
     \hline
   \end{tabular}
   }
 \end{table}
 
-Độ lệch chuẩn tương đối được tính theo công thức:
-\[
-  \mathrm{RSD}(\%) = \frac{s}{\bar{x}} \times 100
-\]
-Trong đó, $s$ là độ lệch chuẩn của các lần đo lặp. Kết quả có RSD thấp cho thấy thao tác phân tích và thiết bị đo có độ ổn định tốt; nếu RSD cao, cần xem xét lại thao tác lấy mẫu, cân mẫu, pha dung dịch, nhận biết điểm kết thúc chuẩn độ hoặc điều kiện vận hành thiết bị.
+\subsection{Nhận xét}
+Các bảng số liệu hiện có cung cấp kết quả đo lặp, nhưng chưa kèm giá trị công bố chính thức của từng mã sản phẩm và chưa có số liệu độ ẩm. Vì vậy, chưa thể kết luận một mẫu đạt hay không đạt so với chỉ tiêu công bố. Sau khi bổ sung giá trị trên nhãn hoặc tiêu chuẩn kỹ thuật, cần tính $\Delta$, $\delta$ và đối chiếu với dung sai áp dụng cho đúng loại phân bón; chỉ nên đưa ra kết luận cuối cùng khi cả độ lặp lại và sai lệch với giá trị công bố đều đáp ứng yêu cầu.
 
-\section{Thảo luận kết quả}
-Khi hoàn thiện số liệu, phần thảo luận nên được trình bày theo các nội dung sau:
-\begin{itemize}
-  \item So sánh kết quả từng chỉ tiêu với thành phần dinh dưỡng công bố trên nhãn hoặc tiêu chuẩn kỹ thuật của sản phẩm.
-  \item Nhận xét sự khác biệt giữa các mẫu hoặc các lô sản xuất, nếu có nhiều hơn một mẫu được kiểm nghiệm.
-  \item Đối với kali hữu hiệu, nêu phương trình đường chuẩn, hệ số $R^2$ và xác nhận nồng độ dung dịch mẫu nằm trong khoảng tuyến tính của đường chuẩn.
-  \item Đối với các phương pháp chuẩn độ, nhận xét độ ổn định của thể tích chuẩn độ giữa các lần lặp và sự rõ ràng của điểm kết thúc.
-  \item Đối với độ ẩm, xác nhận mẫu đã được sấy đến khối lượng không đổi và nhiệt độ sấy phù hợp với loại phân bón.
-  \item Chỉ ra các nguyên nhân kỹ thuật có thể làm kết quả sai lệch, chẳng hạn mẫu không đồng nhất, sai số cân, pha loãng không chính xác, thuốc thử suy giảm chất lượng hoặc thiết bị chưa ổn định.
-\end{itemize}
+\section{Nhận xét chung}
+Các phép xác định đạm tổng số, kali hữu hiệu, lân hữu hiệu và chất hữu cơ đã có số liệu lặp để đánh giá bước đầu độ ổn định của thao tác. Kết quả kali cần luôn được gắn với đường chuẩn và mẫu trắng; kết quả lân và đạm cần kiểm soát điểm kết thúc chuẩn độ; còn kết quả carbon cần đặc biệt chú ý độ đồng nhất mẫu và hiệu quả oxy hóa. Số liệu độ ẩm và giá trị công bố của từng sản phẩm cần được bổ sung để hoàn tất đánh giá chất lượng toàn diện.
 
 \section{Đề xuất xử lý khi kết quả chưa phù hợp}
 Khi có chỉ tiêu không đạt hoặc kết quả lặp có độ phân tán lớn, cần xem xét theo Bảng~\ref{tab:de-xuat-xu-ly-ket-qua} trước khi đưa ra kết luận chính thức.
