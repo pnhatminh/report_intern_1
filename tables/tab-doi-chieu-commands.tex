@@ -1,0 +1,63 @@
+% Các lệnh dùng chung cho bảng đối chiếu thành phẩm.
+
+% Mẫu thành phẩm thông thường: các chỉ tiêu N, K, P và độ ẩm.
+\newcommand{\FinishedProductComparisonRows}[7]{%
+\multirow{4}{=}{#1} & \multirow{4}{=}{#2} & \multirow{4}{=}{#3}
+  & Đạm tổng số (\(\mathrm{N}\)) & \ldots & #4 & -- & -- & -- \\*
+\cline{4-9}
+& & & Kali hữu hiệu (\(\mathrm{K_2O}\)) & \ldots & #5 & -- & -- & -- \\*
+\cline{4-9}
+& & & Lân hữu hiệu (\(\mathrm{P_2O_5}\)) & \ldots & #6 & -- & -- & -- \\*
+\cline{4-9}
+& & & Độ ẩm (\(\mathrm{H_2O}\)) & \ldots & #7 & -- & -- & -- \\
+\hline
+}
+
+% Mẫu thành phẩm đã có đầy đủ tên sản phẩm, mức công bố và kết quả đối chiếu.
+% Bốn đối số cuối lần lượt chứa dữ liệu cho N, K, P và độ ẩm.
+\newcommand{\DeclaredProductComparisonRows}[7]{%
+\multirow{4}{=}{#1} & \multirow{4}{=}{#2} & \multirow{4}{=}{\centering #3}
+  & Đạm tổng số (\(\mathrm{N}\)) & #4 \\*
+\cline{4-9}
+& & & Kali hữu hiệu (\(\mathrm{K_2O}\)) & #5 \\*
+\cline{4-9}
+& & & Lân hữu hiệu (\(\mathrm{P_2O_5}\)) & #6 \\*
+\cline{4-9}
+& & & Độ ẩm (\(\mathrm{H_2O}\)) & #7 \\
+\hline
+}
+
+% Mẫu NPK 501X1 đã có tên sản phẩm và giá trị công bố.
+\newcommand{\NPKFiveZeroOneComparisonRows}{%
+\multirow{4}{=}{01/06/2026} & \multirow{4}{=}{501X1}
+  & \multirow{4}{=}{\centering NPK Sinh Mix 13-13-13}
+  & Đạm tổng số (\(\mathrm{N}\)) & 13,00 & 12,31 & -0,69 & -5,31 & Đạt \\*
+\cline{4-9}
+& & & Kali hữu hiệu (\(\mathrm{K_2O}\)) & 13,00 & 13,35 & 0,35 & 2,69 & Đạt \\*
+\cline{4-9}
+& & & Lân hữu hiệu (\(\mathrm{P_2O_5}\)) & 13,00 & 12,21 & -0,79 & -6,08 & Đạt \\*
+\cline{4-9}
+& & & Độ ẩm (\(\mathrm{H_2O}\)) & 5,00 & 3,50 & -1,50 & -30,00 & Đạt \\
+\hline
+}
+
+% HC1X2: Organic Nutri Khánh Sinh, công bố OM 20% và độ ẩm 30%.
+% Đối số cuối là trạng thái của phép xác định độ ẩm.
+\newcommand{\HCComparisonRows}[9]{%
+\multirow{2}{=}{#1} & \multirow{2}{=}{HC1X2}
+  & \multirow{2}{=}{\centering Organic Nutri Khánh Sinh}
+  & Chất hữu cơ (OM) & 20,00 & #2 & #4 & #5 & #6 \\*
+\cline{4-9}
+& & & Độ ẩm (\(\mathrm{H_2O}\)) & 30,00 & #3 & #7 & #8 & #9 \\
+\hline
+}
+
+% MHCX2: Organic Mix Khánh Sinh, công bố OM 15% và độ ẩm 25%.
+\newcommand{\MHCComparisonRows}{%
+\multirow{2}{=}{15/06/2026} & \multirow{2}{=}{MHCX2}
+  & \multirow{2}{=}{\centering Organic Mix Khánh Sinh}
+  & Chất hữu cơ (OM) & 15,00 & 16,36 & 1,36 & 9,07 & Đạt \\*
+\cline{4-9}
+& & & Độ ẩm (\(\mathrm{H_2O}\)) & 25,00 & 21,57 & -3,43 & -13,72 & Đạt \\
+\hline
+}

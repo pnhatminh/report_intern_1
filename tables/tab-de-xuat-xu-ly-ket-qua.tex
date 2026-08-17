@@ -1,20 +1,105 @@
-\begin{table}[H]
-  \centering
-  \small
-  \renewcommand{\arraystretch}{1.3}
-  \caption{Đề xuất xử lý các tình huống kết quả kiểm nghiệm chưa phù hợp}
-  \label{tab:de-xuat-xu-ly-ket-qua}
-  \begin{tabular}{|p{0.27\textwidth}|p{0.31\textwidth}|p{0.30\textwidth}|}
-    \hline
-    \textbf{Tình huống} & \textbf{Nguyên nhân cần xem xét} & \textbf{Đề xuất xử lý} \\
-    \hline
-    Kết quả khác đáng kể so với chỉ tiêu công bố & Mẫu không đại diện, sai số pha loãng, nguyên liệu hoặc phối trộn không đồng đều & Kiểm tra mã mẫu, phân tích lặp từ mẫu lưu và thông báo bộ phận kỹ thuật hoặc sản xuất khi kết quả được xác nhận. \\
-    \hline
-    Độ lặp lại không đạt yêu cầu & Sai số thao tác, điểm kết thúc chuẩn độ chưa ổn định, thiết bị hoặc thuốc thử không phù hợp & Kiểm tra thiết bị, chuẩn hóa lại dung dịch, thực hiện lại phép thử và ghi nhận nguyên nhân. \\
-    \hline
-    Mẫu kali nằm ngoài khoảng đường chuẩn & Nồng độ mẫu quá cao hoặc quá thấp so với khoảng đo & Pha loãng hoặc điều chỉnh nồng độ mẫu phù hợp, sau đó đo lại và cập nhật hệ số pha loãng. \\
-    \hline
-    Mẫu chưa đạt khối lượng không đổi khi sấy & Thời gian sấy chưa đủ hoặc điều kiện làm nguội, cân chưa phù hợp & Tiếp tục chu kỳ sấy--làm nguội--cân đến khi khối lượng ổn định. \\
-    \hline
-  \end{tabular}
-\end{table}
+\begin{landscape}
+\begingroup
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.18}
+
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.18\linewidth}|>{\raggedright\arraybackslash}p{0.20\linewidth}|>{\raggedright\arraybackslash}p{0.25\linewidth}|>{\raggedright\arraybackslash}p{0.29\linewidth}|}
+\caption{Đề xuất xử lý các tình huống chưa phù hợp trong quá trình kiểm nghiệm}\label{tab:de-xuat-xu-ly-ket-qua} \\
+\hline
+\textbf{Tình huống} & \textbf{Biểu hiện} & \textbf{Nguyên nhân có thể} & \textbf{Đề xuất xử lý} \\
+\hline
+\endfirsthead
+
+\multicolumn{4}{c}{\tablename~\thetable{} -- tiếp theo} \\
+\hline
+\textbf{Tình huống} & \textbf{Biểu hiện} & \textbf{Nguyên nhân có thể} & \textbf{Đề xuất xử lý} \\
+\hline
+\endhead
+
+\hline
+\multicolumn{4}{r}{\textit{Còn tiếp trang sau}} \\
+\endfoot
+
+\hline
+\endlastfoot
+
+Độ lặp không đạt yêu cầu
+& Chênh lệch giữa hai lần phân tích lớn; RPD vượt giới hạn chấp nhận của phương pháp
+& Mẫu chưa được nghiền và trộn đồng nhất trước khi chia mẫu phân tích
+& Nghiền và đồng nhất lại mẫu; lấy lại hai phần mẫu độc lập để tiến hành phân tích song song. \\
+\hline
+
+&
+& Sai số trong quá trình cân mẫu, hút pipet, định mức hoặc pha loãng
+& Kiểm tra lại cân, pipet và dụng cụ định mức; thực hiện thao tác đúng quy trình và hạn chế thay đổi người thao tác giữa các lần lặp. \\
+\hline
+
+&
+& Sai khác trong quá trình xử lý mẫu, thời gian phản ứng, nhiệt độ hoặc điều kiện thí nghiệm
+& Kiểm soát thống nhất thời gian, nhiệt độ, lượng hóa chất và trình tự thao tác giữa các lần thử. \\
+\hline
+
+&
+& Xác định điểm kết thúc chuẩn độ chưa đồng nhất
+& Chuẩn độ chậm khi gần điểm cuối; sử dụng cùng loại chỉ thị và tiêu chí nhận biết màu; thực hiện mẫu trắng song song. \\
+\hline
+
+&
+& Thiết bị phân tích hoạt động chưa ổn định, đặc biệt đối với máy quang kế ngọn lửa
+& Kiểm tra đường chuẩn, dung dịch chuẩn kiểm soát, độ ổn định của ngọn lửa, hệ thống hút và đầu phun; vệ sinh thiết bị trước khi đo lại. \\
+\hline
+
+&
+& Hóa chất hoặc dung dịch chuẩn có nồng độ không ổn định
+& Kiểm tra hạn sử dụng, điều kiện bảo quản; chuẩn hóa lại dung dịch chuẩn khi cần thiết. \\
+\hline
+
+&
+& --
+& \textbf{Thực hiện lại toàn bộ phép thử từ bước cân mẫu. Chỉ lấy kết quả trung bình khi các lần phân tích mới đáp ứng yêu cầu độ lặp.} \\
+\hline
+
+Kết quả thành phẩm khác với chỉ tiêu công bố
+& Hàm lượng N, \(\mathrm{P_2O_5}\), \(\mathrm{K_2O}\) hoặc chất hữu cơ thấp hơn giới hạn cho phép so với mức đăng ký
+& Có thể xuất phát từ sai số phân tích hoặc quá trình chuẩn bị mẫu
+& Trước tiên kiểm tra lại phép tính, hệ số pha loãng, đường chuẩn, mẫu trắng và điều kiện phân tích; sau đó lấy mẫu mới và phân tích lại để xác nhận. \\
+\hline
+
+&
+& Thành phần dinh dưỡng thực tế của nguyên liệu khác với giá trị sử dụng khi tính công thức phối trộn
+& Kiểm tra lại kết quả phân tích nguyên liệu đầu vào và hồ sơ chất lượng của từng lô nguyên liệu. \\
+\hline
+
+&
+& Sai số trong quá trình định lượng nguyên liệu hoặc tỷ lệ phối trộn
+& Kiểm tra phiếu phối liệu, hệ thống cân định lượng và lượng nguyên liệu thực tế đưa vào mẻ sản xuất. \\
+\hline
+
+&
+& Hỗn hợp sau phối trộn chưa đồng đều
+& Kiểm tra thời gian và điều kiện phối trộn; lấy mẫu tại nhiều vị trí của lô để đánh giá mức độ đồng nhất. \\
+\hline
+
+& Hàm lượng \(\mathrm{K_2O}\) hoặc \(\mathrm{P_2O_5}\) thấp bất thường
+& Nguồn nguyên liệu kali hoặc lân chưa phù hợp, lượng nguyên liệu cấp vào dây chuyền sai lệch hoặc hỗn hợp phân bố không đồng đều
+& Kiểm tra riêng nguồn nguyên liệu kali hoặc lân, lượng nguyên liệu được cấp vào dây chuyền và khả năng phân bố không đồng đều trong hỗn hợp. \\
+\hline
+
+& Độ ẩm thành phẩm cao hơn giới hạn
+& Nguyên liệu có độ ẩm cao; sản phẩm hút ẩm trong quá trình sản xuất hoặc bảo quản; quá trình làm khô chưa phù hợp
+& Kiểm tra độ ẩm nguyên liệu, điều kiện sấy hoặc làm khô, thời gian lưu sản phẩm và điều kiện kho; hạn chế tiếp xúc với môi trường có độ ẩm cao. \\
+\hline
+
+& Hàm lượng dinh dưỡng cao hơn mức đăng ký
+& Có thể do sai số pha loãng, đường chuẩn hoặc lượng nguyên liệu dinh dưỡng thực tế cao hơn công thức
+& Kiểm tra lại phép phân tích và công thức phối trộn; nếu kết quả phân tích lại vẫn tương tự thì đánh giá mức độ phù hợp theo giới hạn pháp lý áp dụng cho sản phẩm. \\
+\hline
+
+&
+& --
+& \textbf{Nếu kết quả phân tích lại vẫn không phù hợp, cần tạm thời chưa kết luận lô đạt chất lượng và chuyển thông tin cho Phòng Kỹ thuật/Bộ phận Sản xuất để xác định nguyên nhân, điều chỉnh quá trình sản xuất và kiểm nghiệm lại trước khi xuất sản phẩm.} \\
+
+\end{longtable}
+\endgroup
+\end{landscape}
